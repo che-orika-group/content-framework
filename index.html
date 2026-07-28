@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Che Orika — Content Framework Aug-Oct 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #1a1a1a;
+    --warm: #2c2420;
+    --cream: #faf7f2;
+    --sand: #f0ebe3;
+    --terracotta: #c4704b;
+    --terracotta-light: #f5e6dd;
+    --sage: #7a8b6f;
+    --sage-light: #e8ede5;
+    --gold: #b8963e;
+    --gold-light: #f5f0e0;
+    --plum: #6b4c5e;
+    --plum-light: #ede4e9;
+    --sky: #5a7d95;
+    --sky-light: #e2ecf1;
+    --coral: #d4756b;
+    --coral-light: #fae8e5;
+    --muted: #8a8078;
+    --rose: #a3566e;
+    --rose-light: #f2e4ea;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .header {
+    background: var(--warm);
+    color: var(--cream);
+    padding: 60px 40px 50px;
+    text-align: center;
+  }
+  .header-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .header p {
+    font-size: 15px;
+    color: rgba(250,247,242,0.7);
+    max-width: 540px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+  .header .tagline {
+    display: inline-block;
+    margin-top: 20px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--terracotta);
+    border-top: 1px solid rgba(196,112,75,0.3);
+    padding-top: 16px;
+  }
+  .header .period {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(250,247,242,0.5);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* Sections */
+  .intro {
+    background: white;
+    border-radius: 16px;
+    padding: 36px 32px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  .intro p {
+    font-size: 14.5px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .intro .highlight {
+    display: inline;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    margin: 32px 0 0;
+  }
+  .overview-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .overview-card .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--terracotta);
+  }
+  .overview-card .label {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Hero Piece Strategy */
+  .hero-strategy {
+    background: linear-gradient(135deg, var(--warm) 0%, #3a302a 100%);
+    color: var(--cream);
+    border-radius: 16px;
+    padding: 36px 32px;
+    margin-bottom: 32px;
+  }
+  .hero-strategy h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+  .hero-strategy .hero-sub {
+    font-size: 14px;
+    color: rgba(250,247,242,0.6);
+    margin-bottom: 20px;
+  }
+  .hero-strategy p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(250,247,242,0.85);
+    margin-bottom: 16px;
+  }
+  .hero-flow {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .hero-step {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 14px 16px;
+    flex: 1;
+    min-width: 140px;
+  }
+  .hero-step .step-num {
+    font-size: 11px;
+    color: var(--terracotta);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+  }
+  .hero-step .step-text {
+    font-size: 13px;
+    color: rgba(250,247,242,0.8);
+    line-height: 1.5;
+  }
+
+  /* Content cards */
+  .content-card {
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .content-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .card-header {
+    padding: 28px 32px 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .card-header-left { flex: 1; }
+  .card-number {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .card-subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 300;
+  }
+  .card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .badge-weekly { background: var(--terracotta-light); color: var(--terracotta); }
+  .badge-monthly-4 { background: var(--sage-light); color: var(--sage); }
+  .badge-monthly-2 { background: var(--sky-light); color: var(--sky); }
+  .badge-monthly-1 { background: var(--plum-light); color: var(--plum); }
+  .badge-ongoing { background: var(--gold-light); color: var(--gold); }
+  .badge-flex { background: var(--coral-light); color: var(--coral); }
+
+  .location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+  .loc-boutique { background: var(--terracotta-light); color: var(--terracotta); }
+  .loc-outdoor { background: var(--sage-light); color: var(--sage); }
+  .loc-anywhere { background: var(--sky-light); color: var(--sky); }
+
+  .card-body { padding: 0 32px 28px; }
+  .card-section { margin-bottom: 20px; }
+  .card-section:last-child { margin-bottom: 0; }
+  .section-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .section-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+  }
+  .section-text strong { color: var(--ink); font-weight: 600; }
+
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+    padding: 6px 0 6px 24px;
+    position: relative;
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 12px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    opacity: 0.5;
+  }
+
+  .examples { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .example-tag {
+    background: var(--sand);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--warm);
+    font-style: italic;
+  }
+
+  .screen-elements { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .screen-el { background: var(--sand); padding: 10px 14px; border-radius: 8px; font-size: 13px; }
+  .screen-el .el-label { font-weight: 600; color: var(--ink); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .screen-el .el-value { color: var(--muted); margin-top: 2px; }
+
+  .subtypes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .subtype { background: var(--sand); padding: 14px 16px; border-radius: 10px; }
+  .subtype-name { font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 4px; }
+  .subtype-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+
+  .divider { height: 1px; background: rgba(0,0,0,0.06); margin: 0 32px; }
+
+  .hashtag-bar { padding: 16px 32px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .hashtag { font-size: 12px; color: var(--terracotta); font-weight: 500; background: var(--terracotta-light); padding: 4px 10px; border-radius: 6px; }
+  .hashtag-discovery { font-size: 12px; color: var(--sage); font-weight: 500; background: var(--sage-light); padding: 4px 10px; border-radius: 6px; }
+
+  .credit-note {
+    background: var(--gold-light);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--warm);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .credit-note .icon { flex-shrink: 0; font-size: 16px; }
+
+  /* Dark sections */
+  .summary {
+    background: var(--warm);
+    color: var(--cream);
+    border-radius: 16px;
+    padding: 36px 32px;
+    margin-top: 40px;
+  }
+  .summary h2 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 20px; }
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  .summary-item { background: rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; }
+  .summary-item .s-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--terracotta); margin-bottom: 6px; }
+  .summary-item .s-value { font-size: 14px; line-height: 1.6; color: rgba(250,247,242,0.85); }
+
+  /* 3-month roadmap */
+  .roadmap { margin-top: 40px; }
+  .roadmap-month {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .roadmap-month-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .roadmap-month-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .roadmap-month-theme {
+    font-size: 14px;
+    color: var(--terracotta);
+    font-weight: 500;
+  }
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .roadmap-item {
+    background: var(--sand);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .roadmap-item .r-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .roadmap-item .r-value {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  /* Monthly view */
+  .month-view { margin-top: 32px; }
+  .month-view h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 16px; }
+  .month-bar { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .month-bar:last-child { border-bottom: none; }
+  .month-bar-name { font-weight: 600; font-size: 14px; min-width: 180px; color: var(--ink); }
+  .month-bar-dots { display: flex; gap: 6px; flex: 1; }
+  .dot { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: white; }
+  .dot-terracotta { background: var(--terracotta); }
+  .dot-sage { background: var(--sage); }
+  .dot-sky { background: var(--sky); }
+  .dot-plum { background: var(--plum); }
+  .dot-gold { background: var(--gold); }
+  .dot-coral { background: var(--coral); }
+  .month-bar-count { font-size: 13px; color: var(--muted); min-width: 60px; text-align: right; }
+
+  /* Feedback */
+  .feedback-section {
+    background: white;
+    border-radius: 16px;
+    padding: 36px 32px;
+    margin-top: 24px;
+    border: 2px dashed rgba(196,112,75,0.3);
+  }
+  .feedback-section h2 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 8px; }
+  .feedback-section p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+  .feedback-questions { list-style: none; padding: 0; }
+  .feedback-questions li { font-size: 14.5px; padding: 10px 0; border-bottom: 1px solid var(--sand); color: var(--ink); }
+  .feedback-questions li:last-child { border-bottom: none; }
+  .feedback-questions li span { color: var(--terracotta); font-weight: 600; margin-right: 8px; }
+
+  .footer { text-align: center; padding: 40px 24px; font-size: 12px; color: var(--muted); }
+  .footer .brand { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--ink); margin-bottom: 4px; }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .header { padding: 40px 24px 36px; }
+    .header h1 { font-size: 30px; }
+    .card-header { padding: 20px 20px 16px; flex-direction: column; }
+    .card-body { padding: 0 20px 24px; }
+    .hashtag-bar { padding: 12px 20px; }
+    .divider { margin: 0 20px; }
+    .screen-elements, .subtypes, .summary-grid, .roadmap-grid { grid-template-columns: 1fr; }
+    .overview { grid-template-columns: repeat(2, 1fr); }
+    .month-bar { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .month-bar-name { min-width: auto; }
+    .month-bar-count { text-align: left; }
+    .hero-flow { flex-direction: column; }
+    .roadmap-month { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">Che Orika</div>
+  <h1>Content Framework</h1>
+  <p>The system for what we put out, why, and how often. Not a rigid calendar. A menu we pull from based on what the brand needs each week.</p>
+  <div class="tagline">Your everyday is your runway.</div>
+  <div class="period">August / September / October 2026</div>
+</div>
+
+<div class="container">
+
+  <!-- Intro -->
+  <div class="intro">
+    <h2>How This Works</h2>
+    <p>
+      We have <span class="highlight">7 content types</span>. Each one serves a different purpose: some sell, some build community, some build trust, some keep the page alive. You don't post all 7 every week. You <span class="highlight">pick from the menu</span> based on what's needed. Some weeks are heavy on The Runway. Some weeks a Monthly Edit event drops and that's most of your content. Some weeks Real Talk carries the page.
+    </p>
+    <p style="margin-top: 12px;">
+      Content is NOT boutique-only. Some formats live in the boutique (The Runway, Real Talk). Others go wherever life happens: cafes, offices, parks, restaurants, the street. <span class="highlight">The clothes should be seen in the real world, not just on a rack.</span>
+    </p>
+    <p style="margin-top: 12px;">
+      The only rule: <span class="highlight">The Runway posts every week.</span> Everything else flexes around it.
+    </p>
+
+    <div class="overview">
+      <div class="overview-card">
+        <div class="number">7</div>
+        <div class="label">Content Types</div>
+      </div>
+      <div class="overview-card">
+        <div class="number">16-22</div>
+        <div class="label">Posts / Month</div>
+      </div>
+      <div class="overview-card">
+        <div class="number">4-5</div>
+        <div class="label">Posts / Week</div>
+      </div>
+      <div class="overview-card">
+        <div class="number">3</div>
+        <div class="label">Month Plan</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Piece Strategy -->
+  <div class="hero-strategy">
+    <h2>Hero Piece of the Month</h2>
+    <div class="hero-sub">The strategy layer that runs through everything</div>
+    <p>
+      Every month, pick <strong>1-2 hero pieces</strong> from inventory. These are the pieces that get concentrated attention across multiple content types. The hero piece appears in The Runway, gets its own One Piece Every Life video, shows up in Che Orika On features, and gets ad budget behind it. Instead of spreading attention thin across 30 products, we make 1-2 pieces famous each month.
+    </p>
+    <p>
+      By the end of 3 months, you've built recognition around 4-6 specific pieces. People start associating them with Che Orika. The hero piece is also the piece Dayo puts ad spend behind. No guessing.
+    </p>
+    <div class="hero-flow">
+      <div class="hero-step">
+        <div class="step-num">Step 1</div>
+        <div class="step-text">Pick the hero piece. Choose something versatile, photogenic, and mid-range in price. It should represent what Che Orika does best.</div>
+      </div>
+      <div class="hero-step">
+        <div class="step-num">Step 2</div>
+        <div class="step-text">Feature it across 3+ content types that month. It appears in The Runway, gets a One Piece Every Life video, and shows up in Che Orika On features.</div>
+      </div>
+      <div class="hero-step">
+        <div class="step-num">Step 3</div>
+        <div class="step-text">The best-performing organic content featuring the hero piece becomes the paid ad creative. Concentrated budget, not scattered.</div>
+      </div>
+      <div class="hero-step">
+        <div class="step-num">Step 4</div>
+        <div class="step-text">Next month, new hero piece. The old one moves to supporting role. Over 3 months, 4-6 pieces become "known."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 1: The Runway -->
+  <div class="content-card">
+    <div class="card-header">
+      <div class="card-header-left">
+        <div class="card-number">Content Type 01</div>
+        <div class="card-title">The Che Orika Runway</div>
+        <div class="card-subtitle">Mini runway walk in the boutique. The anchor of the page.</div>
+      </div>
+      <div class="card-badge badge-weekly">Weekly (4-5/month)</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card-body" style="padding-top: 20px;">
+      <div class="card-section">
+        <div class="section-label">Where</div>
+        <span class="location-badge loc-boutique">Boutique</span>
+        <div class="section-text" style="margin-top: 8px;">
+          This one stays in the boutique. Always. The boutique runway is the signature. A cleared walking path on the floor, 3-4 metres long. Someone walks toward the camera wearing a piece. Low camera angle (hip or knee height), natural daylight, confident walk. Each outfit gets a moment. Multiple outfits are cut together on beat. When people see this format, they know it's Che Orika.
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">How to Film</div>
+        <ul class="checklist">
+          <li><strong>Camera:</strong> Phone on tripod, set low (hip height). Static. Never moves. Same angle every time.</li>
+          <li><strong>Lighting:</strong> Natural daylight from boutique windows. No ring light.</li>
+          <li><strong>The walk:</strong> Start at far end, walk toward camera, pause close, slow turn, walk back.</li>
+          <li><strong>Editing:</strong> Cut outfit changes on the beat of the music. 3-5 outfits per video, 30-45 seconds.</li>
+          <li><strong>Music:</strong> One consistent vibe across all Runway posts. Warm, mid-tempo, afrobeat-influenced. This sound becomes ours.</li>
+          <li><strong>Who walks:</strong> Rotate. Cherechi, staff, customers, friends. Different women keep it fresh. Don't let it be the same 2-3 people every week.</li>
+          <li><strong>Batchable:</strong> Film 4 weeks of Runway content in one afternoon.</li>
+        </ul>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">On Screen</div>
+        <div class="screen-elements">
+          <div class="screen-el">
+            <div class="el-label">First 3 Seconds (Hook)</div>
+            <div class="el-value">Text hook that stops the scroll. NOT the logo. The logo does not stop scrolls. The hook does.</div>
+          </div>
+          <div class="screen-el">
+            <div class="el-label">Each Outfit</div>
+            <div class="el-value">Piece name + price displayed on screen</div>
+          </div>
+          <div class="screen-el">
+            <div class="el-label">End Frame</div>
+            <div class="el-value">CTA: "DM your size" or "Tap to order"</div>
+          </div>
+          <div class="screen-el">
+            <div class="el-label">Watermark</div>
+            <div class="el-value">Small Che Orika logo, corner, throughout</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">Example Hooks</div>
+        <div class="examples">
+          <div class="example-tag">"Top 5 dresses under 50K"</div>
+          <div class="example-tag">"The piece every Abuja woman is asking about"</div>
+          <div class="example-tag">"Our top 3 shorts this month"</div>
+          <div class="example-tag">"5 pieces you can wear to court and to dinner"</div>
+          <div class="example-tag">"The 1 jacket you need in your wardrobe"</div>
+          <div class="example-tag">"Top 10 dresses in the store right now"</div>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">Why This Matters</div>
+        <div class="section-text">
+          This is "your everyday is your runway" made literal. It's cheap to produce (you already have the space and the clothes), batchable (film 4 weeks in one afternoon), and every video doubles as a ready-made ad creative. The hero piece of the month should always appear in at least one Runway each month.
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="hashtag-bar">
+      <span class="hashtag">#CheOrikaRunway</span>
+      <span class="hashtag">#CheOrika</span>
+      <span class="hashtag">#YourEverydayIsYourRunway</span>
+      <span class="hashtag">#OrikaSisters</span>
+      <span class="hashtag-discovery">#AbujaFashion</span>
+      <span class="hashtag-discovery">#AbujaBoutique</span>
+      <span class="hashtag-discovery">#ReadyToWear</span>
+    </div>
+  </div>
+
+  <!-- CARD 2: Che Orika On -->
+  <div class="content-card">
+    <div class="card-header">
+      <div class="card-header-left">
+        <div class="card-number">Content Type 02</div>
+        <div class="card-title">Che Orika On ___</div>
+        <div class="card-subtitle">Real women. Real lives. Styled in our pieces.</div>
+      </div>
+      <div class="card-badge badge-monthly-4">4-6 / month</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card-body" style="padding-top: 20px;">
+      <div class="card-section">
+        <div class="section-label">Where</div>
+        <span class="location-badge loc-boutique">Boutique</span>
+        <span class="location-badge loc-outdoor">Outdoor</span>
+        <span class="location-badge loc-anywhere">Their World</span>
+        <div class="section-text" style="margin-top: 8px;">
+          We feature a real woman: who she is, what she does, where she goes. We style her in Che Orika pieces that fit her life. The intro is filmed at the boutique or wherever we meet. Then she films herself during her actual week in real locations: her office, her favourite restaurant, her commute, her weekend. The result is a reel that shows the clothes in a real context, on a real body, in a real life.
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">How It Works</div>
+        <ul class="checklist">
+          <li><strong>Step 1:</strong> Invite 2-3 women to the boutique once or twice a month. Customers, friends, professionals from different walks of life.</li>
+          <li><strong>Step 2:</strong> Film a 60-second intro: who they are, what they do, what their week looks like.</li>
+          <li><strong>Step 3:</strong> Style them in pieces that fit their lifestyle. They take the outfit (purchase or gifting/collab for content).</li>
+          <li><strong>Step 4:</strong> Give them a simple filming guide: "Film near a window. Hold phone horizontally. Full body or waist up." Keep it simple or the footage will be unusable.</li>
+          <li><strong>Step 5:</strong> They send clips of themselves in the outfit during their week. We edit the boutique intro + their real-life footage into one reel.</li>
+        </ul>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">On Screen</div>
+        <div class="screen-elements">
+          <div class="screen-el">
+            <div class="el-label">Name + Title</div>
+            <div class="el-value">"Nkechi. Lawyer. Mum of two."</div>
+          </div>
+          <div class="screen-el">
+            <div class="el-label">Piece Name + Price</div>
+            <div class="el-value">What she's wearing and how much it costs</div>
+          </div>
+          <div class="screen-el">
+            <div class="el-label">CTA</div>
+            <div class="el-value">"DM us to get this look"</div>
+          </div>
+          <div class="screen-el">
+            <div class="el-label">Credit</div>
+            <div class="el-value">Tag the featured woman's handle</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">Sustainability</div>
+        <div class="section-text">
+          Start with women Cherechi already knows. Month 1: friends, family, existing customers. Month 2-3: people start asking to be featured. By Month 4+: you're choosing from a list, not chasing people. The women create half the content themselves (their real-life clips). We just style them and edit.
+        </div>
+      </div>
+
+      <div class="credit-note">
+        <span class="icon">*</span>
+        <span><strong>Always credit.</strong> Tag the featured woman in the post and video. Her name, handle, and what she does. If she has a business, mention it. She's part of the brand story, not a prop.</span>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="hashtag-bar">
+      <span class="hashtag">#CheOrikaOn</span>
+      <span class="hashtag">#CheOrika</span>
+      <span class="hashtag">#OrikaSisters</span>
+      <span class="hashtag-discovery">#AbujaStyle</span>
+      <span class="hashtag-discovery">#NigerianFashion</span>
+      <span class="hashtag-discovery">#NaijaFashionista</span>
+    </div>
+  </div>
+
+  <!-- CARD 3: One Piece Every Life -->
+  <div class="content-card">
+    <div class="card-header">
+      <div class="card-header-left">
+        <div class="card-number">Content Type 03</div>
+        <div class="card-title">One Piece, Every Life</div>
+        <div class="card-subtitle">One piece. Multiple occasions. Real locations.</div>
+      </div>
+      <div class="card-badge badge-monthly-2">2-3 / month</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card-body" style="padding-top: 20px;">
+      <div class="card-section">
+        <div class="section-label">Where</div>
+        <span class="location-badge loc-outdoor">Outdoor (Primary)</span>
+        <span class="location-badge loc-boutique">Boutique (Fallback)</span>
+        <div class="section-text" style="margin-top: 8px;">
+          Take one piece. Style it three different ways for three different occasions. The default is to film each look in a <strong>real location</strong>: the office look is filmed walking into an actual office building, the brunch look is at an actual cafe, the dinner look is at an actual restaurant. This is "functional pieces for everywhere you go" as proof, not a promise. The boutique version (3 outfit changes in-store) works when time is short, but the outdoor version is stronger.
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">How to Film</div>
+        <ul class="checklist">
+          <li>Same piece, 3 different styling setups (change accessories, shoes, hair, bag)</li>
+          <li>Film each look in a different real-life location. A cafe. A corporate lobby. A dinner spot. A park.</li>
+          <li>Quick cuts between the 3 looks. 15-20 seconds total.</li>
+          <li>Works best with the hero piece of the month or mid-range versatile pieces you want to move</li>
+          <li>Fallback: film all 3 looks in the boutique with outfit changes. Still works, just less impactful.</li>
+        </ul>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">On Screen</div>
+        <div class="screen-elements">
+          <div class="screen-el">
+            <div class="el-label">Piece Name + Price</div>
+            <div class="el-value">Always visible. Always. No exceptions.</div>
+          </div>
+          <div class="screen-el">
+            <div class="el-label">Occasion Labels</div>
+            <div class="el-value">"To the office" / "To brunch" / "To a date"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">Example Hooks</div>
+        <div class="examples">
+          <div class="example-tag">"One dress. Three lives. N38,000."</div>
+          <div class="example-tag">"She wore it to work, to dinner, and to church"</div>
+          <div class="example-tag">"Your friends will think you own three different dresses"</div>
+          <div class="example-tag">"N45,000. Monday to Sunday."</div>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">Why This Matters</div>
+        <div class="section-text">
+          This is the single best format for moving inventory. The hero piece of the month should always get a One Piece Every Life video. The price is always on screen. The CTA is always clear. Every one of these is a product ad disguised as lifestyle content.
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="hashtag-bar">
+      <span class="hashtag">#OnePieceEveryLife</span>
+      <span class="hashtag">#CheOrika</span>
+      <span class="hashtag">#YourEverydayIsYourRunway</span>
+      <span class="hashtag-discovery">#NaijaFashion</span>
+      <span class="hashtag-discovery">#AbujaFashion</span>
+      <span class="hashtag-discovery">#AfricanFashion</span>
+    </div>
+  </div>
+
+  <!-- CARD 4: The Monthly Edit -->
+  <div class="content-card">
+    <div class="card-header">
+      <div class="card-header-left">
+        <div class="card-number">Content Type 04</div>
+        <div class="card-title">The Che Orika Edit</div>
+        <div class="card-subtitle">A monthly community event. Different activity every time.</div>
+      </div>
+      <div class="card-badge badge-monthly-1">1 / month</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card-body" style="padding-top: 20px;">
+      <div class="card-section">
+        <div class="section-label">Where</div>
+        <span class="location-badge loc-outdoor">Outdoor</span>
+        <span class="location-badge loc-anywhere">Rotating Venues</span>
+        <span class="location-badge loc-boutique">Boutique (Sometimes)</span>
+        <div class="section-text" style="margin-top: 8px;">
+          Once a month, we bring 6-8 women together for an activity. The venue and activity rotate every time. A picnic in a park. A rooftop brunch. A paint-and-sip. A cooking class. A garden hangout. The common thread is Che Orika women doing life together, wearing the pieces. Every event is a content factory.
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">What It Produces</div>
+        <ul class="checklist">
+          <li>6-8 outfit posts (each attendee in their styled look)</li>
+          <li>2-3 reels (event montage, outfit reveals, candid moments)</li>
+          <li>15-20 Stories (real-time coverage that creates FOMO for next month)</li>
+          <li>Attendees post their own photos = free reach to their networks</li>
+          <li>One event = roughly 2 weeks of content</li>
+        </ul>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">Keep It Simple</div>
+        <div class="section-text">
+          Budget under N50,000 per event. Don't overthink it. The content should feel effortless even if it took planning. The moment it feels like an event management project, simplify the next one.
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">First 3 Months</div>
+        <div class="examples">
+          <div class="example-tag">August: Picnic in the park</div>
+          <div class="example-tag">September: Rooftop brunch</div>
+          <div class="example-tag">October: Paint and sip</div>
+        </div>
+      </div>
+
+      <div class="credit-note">
+        <span class="icon">*</span>
+        <span><strong>Always credit.</strong> Every attendee is tagged in every piece of content they appear in. Feature their name, what they do, and their handle. They are collaborators, not background extras.</span>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="hashtag-bar">
+      <span class="hashtag">#TheCheOrikaEdit</span>
+      <span class="hashtag">#OrikaSisters</span>
+      <span class="hashtag">#CheOrika</span>
+      <span class="hashtag-discovery">#AbujaEvents</span>
+      <span class="hashtag-discovery">#AbujaBabes</span>
+      <span class="hashtag-discovery">#NaijaGirl</span>
+    </div>
+  </div>
+
+  <!-- CARD 5: Real Talk -->
+  <div class="content-card">
+    <div class="card-header">
+      <div class="card-header-left">
+        <div class="card-number">Content Type 05</div>
+        <div class="card-title">Real Talk with Che Orika</div>
+        <div class="card-subtitle">Cherechi talks to camera. Opinions, tips, education, honest takes.</div>
+      </div>
+      <div class="card-badge badge-monthly-2">2-3 / month</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card-body" style="padding-top: 20px;">
+      <div class="card-section">
+        <div class="section-label">Where</div>
+        <span class="location-badge loc-boutique">Boutique (Always)</span>
+        <div class="section-text" style="margin-top: 8px;">
+          Cherechi picks up her phone, stands in the boutique, and talks about something her customer cares about. The boutique is always the backdrop for this format. The space becomes part of the brand identity. People start associating the interior with Cherechi's voice.
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">Covers Two Things</div>
+        <div class="subtypes">
+          <div class="subtype">
+            <div class="subtype-name">Opinions and Hot Takes</div>
+            <div class="subtype-desc">Things other brands won't say. "I'm going to be honest..." energy. The ones that perform are the ones where Cherechi says something a little spicy, a little honest, something people screenshot and share.</div>
+          </div>
+          <div class="subtype">
+            <div class="subtype-name">Tips and Education</div>
+            <div class="subtype-desc">How to find your size for ready-to-wear. 3 fabrics that survive Abuja heat. What to wear to a Nigerian wedding that isn't aso ebi. Searchable content that brings new audiences.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">How to Film</div>
+        <ul class="checklist">
+          <li>Always in the boutique. The space is part of the brand identity.</li>
+          <li>Phone in hand or on tripod. 30-45 seconds max.</li>
+          <li>No script. Just know the one point you want to make and say it.</li>
+          <li>Add captions in editing (most people watch without sound).</li>
+        </ul>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">Example Topics</div>
+        <div class="examples">
+          <div class="example-tag">"How to find your size for ready-to-wear"</div>
+          <div class="example-tag">"Why your clothes don't last (and what to look for)"</div>
+          <div class="example-tag">"What nobody tells you about buying clothes online in Nigeria"</div>
+          <div class="example-tag">"3 fabrics that actually work in Abuja heat"</div>
+          <div class="example-tag">"The real cost of a well-made dress"</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="hashtag-bar">
+      <span class="hashtag">#CheOrikaRealTalk</span>
+      <span class="hashtag">#CheOrika</span>
+      <span class="hashtag-discovery">#NigerianFashion</span>
+      <span class="hashtag-discovery">#NigerianDesigner</span>
+      <span class="hashtag-discovery">#MadeInNigeria</span>
+    </div>
+  </div>
+
+  <!-- CARD 6: Voice & Vibes -->
+  <div class="content-card">
+    <div class="card-header">
+      <div class="card-header-left">
+        <div class="card-number">Content Type 06</div>
+        <div class="card-title">Voice & Vibes</div>
+        <div class="card-subtitle">Voiceovers, trending audio, memes, BTS. The fun stuff.</div>
+      </div>
+      <div class="card-badge badge-flex">Flexible (2-4 / month)</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card-body" style="padding-top: 20px;">
+      <div class="card-section">
+        <div class="section-label">Where</div>
+        <span class="location-badge loc-boutique">Boutique</span>
+        <span class="location-badge loc-outdoor">Outdoor</span>
+        <span class="location-badge loc-anywhere">Anywhere</span>
+        <div class="section-text" style="margin-top: 8px;">
+          This is the category for everything that keeps the page alive and relatable. It can happen anywhere: the boutique, the fabric market, walking through Abuja, packing orders, wherever life happens. It's NOT the main content engine. It's the seasoning. Use it to fill gaps, ride trends when they're genuinely funny, and show the brand's personality.
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">The Different Types</div>
+        <div class="subtypes">
+          <div class="subtype">
+            <div class="subtype-name">Trending Audio</div>
+            <div class="subtype-desc">A trending sound paired with outfit transitions or styling moments. Quick, native to the platform, easy to produce.</div>
+          </div>
+          <div class="subtype">
+            <div class="subtype-name">Voiceovers</div>
+            <div class="subtype-desc">Original or trending voiceover laid over outfit footage. "When your friend says she has nothing to wear but her wardrobe is full of Che Orika..."</div>
+          </div>
+          <div class="subtype">
+            <div class="subtype-name">Memes and Humour</div>
+            <div class="subtype-desc">Relatable fashion humour. Not random. Has to connect to the brand or the customer's life. "POV: You said you're done buying clothes this month..."</div>
+          </div>
+          <div class="subtype">
+            <div class="subtype-name">Behind the Scenes</div>
+            <div class="subtype-desc">Packing orders, new stock arriving, fabric shopping at the market, a funny moment in the store, setting up for a shoot. Raw, unfiltered. Can be outdoor or in-store.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">The Rule</div>
+        <div class="section-text">
+          <strong>If you only have energy for 3 posts this week, none of them should be from this category.</strong> The Runway, Che Orika On, One Piece Every Life, and Real Talk come first. Voice & Vibes fills in around them. This is what every other Nigerian fashion brand makes their whole identity. For us, it's a small part of a bigger system.
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="hashtag-bar">
+      <span class="hashtag">#CheOrika</span>
+      <span class="hashtag">#OrikaSisters</span>
+      <span class="hashtag-discovery">#NaijaBrandChick</span>
+      <span class="hashtag-discovery">#AbujaStyle</span>
+      <span class="hashtag-discovery">#NaijaFashion</span>
+    </div>
+  </div>
+
+  <!-- CARD 7: Spotted in Che Orika -->
+  <div class="content-card">
+    <div class="card-header">
+      <div class="card-header-left">
+        <div class="card-number">Content Type 07</div>
+        <div class="card-title">Spotted in Che Orika</div>
+        <div class="card-subtitle">Customer reposts. Orika Sisters wearing the pieces in the wild.</div>
+      </div>
+      <div class="card-badge badge-ongoing">Ongoing</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card-body" style="padding-top: 20px;">
+      <div class="card-section">
+        <div class="section-label">Where</div>
+        <span class="location-badge loc-anywhere">Wherever They Are</span>
+        <div class="section-text" style="margin-top: 8px;">
+          When a customer wears a Che Orika piece and posts about it, we repost. We create a culture where Orika Sisters tag us, and we celebrate them. This is social proof. It shows potential customers that real people buy from us and love what they got. It costs nothing and grows on its own over time.
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="section-label">How It Works</div>
+        <ul class="checklist">
+          <li>Check tags and DMs daily for customer photos</li>
+          <li>Repost to Stories immediately (with credit and a tag)</li>
+          <li>Best ones go to the main feed as a proper post</li>
+          <li>Caption always credits the customer: name, handle, what she's wearing, piece name and price</li>
+          <li>Encourage tagging: "Tag us when you wear your Che Orika piece and you might be featured"</li>
+        </ul>
+      </div>
+
+      <div class="credit-note">
+        <span class="icon">*</span>
+        <span><strong>Always ask permission</strong> before reposting to the main feed. Stories reposts are standard, but a feed feature should feel like a collaboration, not a surprise.</span>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="hashtag-bar">
+      <span class="hashtag">#SpottedInCheOrika</span>
+      <span class="hashtag">#OrikaSisters</span>
+      <span class="hashtag">#CheOrika</span>
+      <span class="hashtag-discovery">#AbujaShopping</span>
+      <span class="hashtag-discovery">#AfricanFashion</span>
+    </div>
+  </div>
+
+  <!-- A Typical Month -->
+  <div class="intro" style="margin-top: 40px;">
+    <h2>A Typical Month</h2>
+    <p>This is a rough view of how content distributes across a month. It's not a strict schedule. Some types flex up or down depending on capacity and what's happening.</p>
+
+    <div class="month-view">
+      <div class="month-bar">
+        <div class="month-bar-name">The Runway</div>
+        <div class="month-bar-dots">
+          <div class="dot dot-terracotta">W1</div>
+          <div class="dot dot-terracotta">W2</div>
+          <div class="dot dot-terracotta">W3</div>
+          <div class="dot dot-terracotta">W4</div>
+        </div>
+        <div class="month-bar-count">4-5x</div>
+      </div>
+      <div class="month-bar">
+        <div class="month-bar-name">Che Orika On</div>
+        <div class="month-bar-dots">
+          <div class="dot dot-sage">W1</div>
+          <div class="dot dot-sage">W2</div>
+          <div class="dot dot-sage">W3</div>
+          <div class="dot dot-sage">W4</div>
+        </div>
+        <div class="month-bar-count">4-6x</div>
+      </div>
+      <div class="month-bar">
+        <div class="month-bar-name">One Piece, Every Life</div>
+        <div class="month-bar-dots">
+          <div class="dot dot-sky">W1</div>
+          <div class="dot dot-sky" style="opacity:0.4">W3</div>
+        </div>
+        <div class="month-bar-count">2-3x</div>
+      </div>
+      <div class="month-bar">
+        <div class="month-bar-name">The Che Orika Edit</div>
+        <div class="month-bar-dots">
+          <div class="dot dot-plum">W2</div>
+        </div>
+        <div class="month-bar-count">1x</div>
+      </div>
+      <div class="month-bar">
+        <div class="month-bar-name">Real Talk</div>
+        <div class="month-bar-dots">
+          <div class="dot dot-gold">W1</div>
+          <div class="dot dot-gold" style="opacity:0.4">W3</div>
+        </div>
+        <div class="month-bar-count">2-3x</div>
+      </div>
+      <div class="month-bar">
+        <div class="month-bar-name">Voice & Vibes</div>
+        <div class="month-bar-dots">
+          <div class="dot dot-coral">W2</div>
+          <div class="dot dot-coral" style="opacity:0.4">W4</div>
+        </div>
+        <div class="month-bar-count">2-4x</div>
+      </div>
+      <div class="month-bar">
+        <div class="month-bar-name">Spotted in Che Orika</div>
+        <div class="month-bar-dots">
+          <span style="font-size: 13px; color: var(--muted); font-style: italic;">Whenever customers tag us</span>
+        </div>
+        <div class="month-bar-count">Ongoing</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3-Month Roadmap -->
+  <div class="roadmap">
+    <div class="intro" style="margin-bottom: 16px;">
+      <h2>The 3-Month Roadmap</h2>
+      <p>August to establish the system. September to refine. October to run. Then we reassess everything.</p>
+    </div>
+
+    <div class="roadmap-month">
+      <div class="roadmap-month-header">
+        <div class="roadmap-month-name">August</div>
+        <div class="roadmap-month-theme">Build the Foundation</div>
+      </div>
+      <div class="roadmap-grid">
+        <div class="roadmap-item">
+          <div class="r-label">Hero Piece</div>
+          <div class="r-value">Pick 1 hero piece. Feature it across at least 3 content types. Learn what resonates.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">The Runway</div>
+          <div class="r-value">Film test episode. Lock the format: camera angle, music, edit style. Start posting weekly.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">Che Orika On</div>
+          <div class="r-value">Start with 2-3 women Cherechi already knows. Learn the filming and editing process.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">One Piece, Every Life</div>
+          <div class="r-value">2 videos. Can start in-boutique while we figure out outdoor location logistics.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">The Edit</div>
+          <div class="r-value">First event: Picnic in the park. Small, 6-8 women. Film everything.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">Real Talk</div>
+          <div class="r-value">2-3 videos. Test which topics get saves and shares. Learn what Cherechi's audience responds to.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">Voice & Vibes</div>
+          <div class="r-value">Fill gaps. 2-4 posts. Include outdoor BTS.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">Goal</div>
+          <div class="r-value">Establish the system. Every content type gets tested at least once. Find what works.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-month">
+      <div class="roadmap-month-header">
+        <div class="roadmap-month-name">September</div>
+        <div class="roadmap-month-theme">Refine and Expand</div>
+      </div>
+      <div class="roadmap-grid">
+        <div class="roadmap-item">
+          <div class="r-label">Hero Piece</div>
+          <div class="r-value">Pick 1-2 new hero pieces. August's hero should now have social proof (customer photos, DMs, reposts).</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">The Runway</div>
+          <div class="r-value">Weekly. Consistent. Rotate who walks. The format should feel locked in and recognizable.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">Che Orika On</div>
+          <div class="r-value">4-6 features. Start getting requests from women who want to be featured. The series builds its own momentum.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">One Piece, Every Life</div>
+          <div class="r-value">2-3 videos. At least 1 fully outdoor (cafe, office, dinner). Test how outdoor performs vs. boutique.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">The Edit</div>
+          <div class="r-value">Second event: Rooftop brunch. Different activity, same community energy.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">Real Talk</div>
+          <div class="r-value">2-3 videos. Double down on the topics that got saves in August. Cut the ones that didn't.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">Voice & Vibes</div>
+          <div class="r-value">2-4 posts. Only the ones that genuinely fit.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">Goal</div>
+          <div class="r-value">Refine what works, cut what doesn't. First outdoor One Piece shoot. Community starts recognizing the formats.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-month">
+      <div class="roadmap-month-header">
+        <div class="roadmap-month-name">October</div>
+        <div class="roadmap-month-theme">The System is Running</div>
+      </div>
+      <div class="roadmap-grid">
+        <div class="roadmap-item">
+          <div class="r-label">Hero Piece</div>
+          <div class="r-value">1-2 hero pieces. By now we know what sells. Hero selection is data-informed, not guesswork.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">The Runway</div>
+          <div class="r-value">Weekly. Consider a "best of" compilation reel at end of month. The format is now a known brand signature.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">Che Orika On</div>
+          <div class="r-value">4-6 features. By now women are asking to be part of it. You're choosing from a list, not chasing people.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">One Piece, Every Life</div>
+          <div class="r-value">2-3 videos. Mostly outdoor. This is now a proven format. Use it to move inventory intentionally.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">The Edit</div>
+          <div class="r-value">Third event: Paint and sip. By now there's a waitlist. The event is becoming a thing people talk about.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">Real Talk</div>
+          <div class="r-value">2-3 videos. Cherechi is becoming the voice people trust on fashion in Abuja.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">Voice & Vibes</div>
+          <div class="r-value">2-4 posts. The seasoning, never the meal.</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="r-label">Goal</div>
+          <div class="r-value">System running smoothly. Assess everything. What do we keep, what do we change, what do we scale for Q4?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Caption Template -->
+  <div class="intro" style="margin-top: 40px;">
+    <h2>Caption Template</h2>
+    <p>Every post needs a caption that does the work. Not a paragraph. Not a hashtag dump. A clear, scannable caption that tells people what the piece is, what it costs, and how to buy it.</p>
+
+    <div style="background: var(--sand); border-radius: 12px; padding: 24px; margin-top: 20px; font-size: 14px; line-height: 2; color: var(--warm);">
+      <div style="font-weight: 600; color: var(--terracotta); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Caption Structure</div>
+      <strong>Line 1:</strong> Hook or story (the first line people see before "...more")<br>
+      <strong>Line 2:</strong> What the piece is + piece name<br>
+      <strong>Line 3:</strong> Price<br>
+      <strong>Line 4:</strong> Available sizes (e.g., S - XL)<br>
+      <strong>Line 5:</strong> How to order: "DM us your size" or "Tap the link in bio" or "Send us a WhatsApp"<br>
+      <strong>Line 6:</strong> Hashtags (8-10 max)
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
+      <div style="background: var(--sand); border-radius: 12px; padding: 20px;">
+        <div style="font-weight: 600; color: var(--terracotta); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Example: The Runway</div>
+        <div style="font-size: 13px; color: #444; line-height: 1.8;">
+          Top 5 dresses you can wear to the office and to dinner. All in store now.<br><br>
+          1. The Amara Dress - N42,000<br>
+          2. The Nneka Wrap - N38,000<br>
+          3. The Zuri Midi - N55,000<br>
+          4. The Kemi Shift - N35,000<br>
+          5. The Ada Blazer Dress - N68,000<br><br>
+          Sizes S - XL. DM us your size to order.<br><br>
+          #CheOrikaRunway #CheOrika #AbujaFashion ...
+        </div>
+      </div>
+      <div style="background: var(--sand); border-radius: 12px; padding: 20px;">
+        <div style="font-weight: 600; color: var(--terracotta); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Example: Che Orika On</div>
+        <div style="font-size: 13px; color: #444; line-height: 1.8;">
+          Meet Nkechi. Corporate lawyer. Mum of two. She runs a team of 40 at Access Bank and still makes it to school pickup by 4pm.<br><br>
+          Wearing: The Zuri Midi Dress - N55,000<br>
+          Sizes S - XL<br><br>
+          DM us to get this look.<br><br>
+          @nkechi.law<br><br>
+          #CheOrikaOn #CheOrika #AbujaStyle ...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stories vs Feed -->
+  <div class="intro" style="margin-top: 24px;">
+    <h2>Stories vs Feed</h2>
+    <p>Not everything goes to the main feed. Here's what goes where.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px;">
+      <div style="background: var(--terracotta-light); border-radius: 12px; padding: 20px;">
+        <div style="font-weight: 600; color: var(--terracotta); font-size: 13px; margin-bottom: 10px;">Feed + Reels (Permanent)</div>
+        <div style="font-size: 13px; color: #444; line-height: 1.8;">
+          The Che Orika Runway<br>
+          Che Orika On ___<br>
+          One Piece, Every Life<br>
+          Real Talk with Che Orika<br>
+          Best Spotted in Che Orika posts<br>
+          The Edit event highlight reel
+        </div>
+      </div>
+      <div style="background: var(--sage-light); border-radius: 12px; padding: 20px;">
+        <div style="font-weight: 600; color: var(--sage); font-size: 13px; margin-bottom: 10px;">Stories First (Temporary / Casual)</div>
+        <div style="font-size: 13px; color: #444; line-height: 1.8;">
+          Behind the scenes<br>
+          Spotted in Che Orika reposts<br>
+          The Edit event real-time coverage<br>
+          Casual Voice & Vibes<br>
+          Quick polls, Q&As, "this or that"<br>
+          Packing orders, new stock previews
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 12px; font-size: 13px; color: var(--muted);">
+      Rule of thumb: if it took effort to produce and has a price/CTA, it goes to the Feed. If it's spontaneous and casual, it goes to Stories first. Stories content can graduate to Feed if it performs.
+    </div>
+  </div>
+
+  <!-- Ad Spend Rules -->
+  <div class="hero-strategy" style="margin-top: 24px;">
+    <h2>What Gets Ad Spend</h2>
+    <div class="hero-sub">Not everything should be boosted. Here's what gets budget and what doesn't.</div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px;">
+      <div style="background: rgba(122,139,111,0.3); border-radius: 10px; padding: 16px;">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--sage); margin-bottom: 6px; font-weight: 600;">Always Boost</div>
+        <div style="font-size: 13px; color: rgba(250,247,242,0.85); line-height: 1.6;">
+          The Runway (especially hero piece editions)<br><br>
+          One Piece, Every Life<br><br>
+          Best-performing Che Orika On
+        </div>
+      </div>
+      <div style="background: rgba(184,150,62,0.2); border-radius: 10px; padding: 16px;">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 6px; font-weight: 600;">Maybe Boost</div>
+        <div style="font-size: 13px; color: rgba(250,247,242,0.85); line-height: 1.6;">
+          Real Talk (only if it goes semi-viral organically)<br><br>
+          Spotted in Che Orika (only as social proof retargeting)
+        </div>
+      </div>
+      <div style="background: rgba(212,117,107,0.2); border-radius: 10px; padding: 16px;">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--coral); margin-bottom: 6px; font-weight: 600;">Never Boost</div>
+        <div style="font-size: 13px; color: rgba(250,247,242,0.85); line-height: 1.6;">
+          Voice & Vibes / Memes<br><br>
+          Behind the Scenes<br><br>
+          These get laughs, not DMs. Don't spend money on them.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tracking -->
+  <div class="intro" style="margin-top: 24px;">
+    <h2>How We Track What's Working</h2>
+    <p>Every two weeks, we review the numbers. Not vanity metrics (likes, comments). The metrics that tell us if the content is actually making money.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px;">
+      <div style="background: var(--sand); border-radius: 12px; padding: 20px;">
+        <div style="font-weight: 600; color: var(--terracotta); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px;">Content Metrics (Every 2 Weeks)</div>
+        <div style="font-size: 13px; color: #444; line-height: 1.8;">
+          <strong>Saves:</strong> How many people saved each post (signals purchase intent)<br>
+          <strong>Shares:</strong> How many people sent it to a friend<br>
+          <strong>DMs generated:</strong> Which posts led to inquiries<br>
+          <strong>Follower growth:</strong> Net new followers in the period<br>
+          <strong>Top 3 posts:</strong> Which content types performed best
+        </div>
+      </div>
+      <div style="background: var(--sand); border-radius: 12px; padding: 20px;">
+        <div style="font-weight: 600; color: var(--terracotta); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px;">Sales Metrics (Every 2 Weeks)</div>
+        <div style="font-size: 13px; color: #444; line-height: 1.8;">
+          <strong>DM inquiries:</strong> Total number of people who messaged about buying<br>
+          <strong>DM to sale conversion:</strong> How many inquiries became purchases<br>
+          <strong>Revenue from content:</strong> Which posts led to actual sales<br>
+          <strong>Hero piece performance:</strong> Did the hero piece sell? How many?<br>
+          <strong>Average response time:</strong> How fast are we replying to DMs?
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--gold-light); border-radius: 8px; padding: 14px 16px; font-size: 13px; color: var(--warm); margin-top: 16px;">
+      <strong>DM response target: under 30 minutes during business hours.</strong> Data shows this triples the conversion rate (59% vs 20% for slow replies). This is the single highest-impact thing we can do. Fast replies = more sales from the same content.
+    </div>
+  </div>
+
+  <!-- Batching Schedule -->
+  <div class="intro" style="margin-top: 24px;">
+    <h2>Filming and Batching</h2>
+    <p>Two planned filming days per month covers 80% of your content. The rest is spontaneous. Don't create content one-by-one as you need it. Batch it.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 20px;">
+      <div style="background: var(--terracotta-light); border-radius: 12px; padding: 20px;">
+        <div style="font-weight: 600; color: var(--terracotta); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Filming Day 1</div>
+        <div style="font-size: 13px; color: #444; line-height: 1.7;">
+          <strong>The Runway:</strong> Film 4-5 Runway videos in one afternoon. Set up tripod, line up outfits, walk and change. 3 hours total.<br><br>
+          <strong>Output:</strong> One full month of Runway content done.
+        </div>
+      </div>
+      <div style="background: var(--sage-light); border-radius: 12px; padding: 20px;">
+        <div style="font-weight: 600; color: var(--sage); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Filming Day 2</div>
+        <div style="font-size: 13px; color: #444; line-height: 1.7;">
+          <strong>One Piece, Every Life:</strong> Film 2-3 videos (outdoor or in-boutique).<br>
+          <strong>Real Talk:</strong> Film 2-3 talking-to-camera videos back to back.<br><br>
+          <strong>Output:</strong> One month of One Piece + Real Talk done.
+        </div>
+      </div>
+      <div style="background: var(--plum-light); border-radius: 12px; padding: 20px;">
+        <div style="font-weight: 600; color: var(--plum); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">The Edit Event</div>
+        <div style="font-size: 13px; color: #444; line-height: 1.7;">
+          <strong>Monthly event:</strong> Produces its own content burst. 6-8 outfit posts + 2-3 reels + Stories.<br><br>
+          <strong>Output:</strong> Roughly 2 weeks of content from one afternoon.
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 12px; font-size: 13px; color: var(--muted);">
+      <strong>Che Orika On</strong> can't be fully batched (depends on other people's schedules). Schedule 2-3 women per month to come to the boutique for styling. <strong>Voice & Vibes and Spotted</strong> are spontaneous, they happen as they happen. <strong>Editing:</strong> Use CapCut (free). Auto-captions on everything. Same colour filter on all Runway videos for consistency.
+    </div>
+  </div>
+
+  <!-- Hashtag Guide -->
+  <div class="summary">
+    <h2>Hashtag Guide</h2>
+    <p style="font-size: 14px; color: rgba(250,247,242,0.6); margin-bottom: 20px;">Use 8-10 hashtags per post. Mix brand hashtags with discovery hashtags. Brand hashtags build identity. Discovery hashtags bring new people.</p>
+    <div class="summary-grid">
+      <div class="summary-item">
+        <div class="s-label">Brand (On Every Post)</div>
+        <div class="s-value">#CheOrika<br>#OrikaSisters<br>#YourEverydayIsYourRunway</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Series-Specific</div>
+        <div class="s-value">#CheOrikaRunway<br>#CheOrikaOn<br>#OnePieceEveryLife<br>#TheCheOrikaEdit<br>#CheOrikaRealTalk<br>#SpottedInCheOrika</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Location (Abuja + Nigeria)</div>
+        <div class="s-value">#AbujaFashion<br>#AbujaBoutique<br>#AbujaShopping<br>#AbujaStyle<br>#AbujaBabes<br>#NigerianFashion<br>#NaijaFashion<br>#LagosFashion</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Discovery (Reach New People)</div>
+        <div class="s-value">#NaijaBrandChick<br>#NaijaFashionista<br>#NigerianDesigner<br>#ReadyToWear<br>#MadeInNigeria<br>#AfricanFashion<br>#AfricanDesigner<br>#MadeInAfrica</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Lifestyle / Occasion</div>
+        <div class="s-value">#OfficeLook<br>#NigerianStyle<br>#OwambeStyle<br>#AsoebiStyle<br>#NaijaGirl<br>#AfricanWoman</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Community</div>
+        <div class="s-value"><strong>Orika Sisters</strong><br><br>Used in captions, DMs, event invites, and stories. This is what we call our people.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feedback -->
+  <div class="feedback-section">
+    <h2>Your Turn</h2>
+    <p>This framework is a starting point, not a final answer. We want your honest input before we lock it in.</p>
+    <ul class="feedback-questions">
+      <li><span>01</span> Are there content types missing from this list that you think we should be doing?</li>
+      <li><span>02</span> Do the series names feel right? Would you change any of them?</li>
+      <li><span>03</span> Is the frequency realistic given our current team and capacity?</li>
+      <li><span>04</span> Which content type are you most excited about? Which one feels forced?</li>
+      <li><span>05</span> What do you think about the Hero Piece of the Month strategy?</li>
+      <li><span>06</span> Is there anything about how Che Orika should be known that isn't captured here?</li>
+      <li><span>07</span> Any ideas, formats, or references you've seen that should be in the mix?</li>
+      <li><span>08</span> What do you think about the 3-month roadmap? Is the pacing right?</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <div class="brand">Che Orika</div>
+    <div>Content Framework / August - October 2026 / Internal Document</div>
+  </div>
+
+</div>
+
+</body>
+</html>
