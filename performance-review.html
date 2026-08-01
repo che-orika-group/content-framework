@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Che Orika — SMM 90-Day Performance Review</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --ink: #1a1a1a; --warm: #2c2420; --cream: #faf7f2; --sand: #f0ebe3;
+    --terracotta: #c4704b; --terracotta-light: #f5e6dd; --sage: #7a8b6f;
+    --sage-light: #e8ede5; --gold: #b8963e; --gold-light: #f5f0e0;
+    --muted: #8a8078; --sky: #5a7d95; --sky-light: #e2ecf1;
+    --coral: #d4756b; --coral-light: #fae8e5; --plum: #6b4c5e;
+    --red: #c0392b; --red-light: #fbe8e6; --green: #27ae60; --green-light: #e8f5e9;
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  .header { background: var(--warm); color: var(--cream); padding: 50px 40px 40px; text-align: center; }
+  .header-brand { font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 14px; }
+  .header h1 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; margin-bottom: 10px; }
+  .header p { font-size: 14px; color: rgba(250,247,242,0.65); max-width: 520px; margin: 0 auto; font-weight: 300; }
+  .header .period { display: inline-block; margin-top: 16px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(250,247,242,0.4); }
+  .header .confidential { display: inline-block; margin-top: 8px; background: rgba(196,112,75,0.3); padding: 4px 12px; border-radius: 4px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--terracotta); }
+
+  .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  .card { background: white; border-radius: 16px; padding: 32px; margin-bottom: 20px; border: 1px solid rgba(0,0,0,0.06); }
+  .card h2 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 6px; }
+  .card .sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+  .card p { font-size: 14px; color: #444; line-height: 1.7; margin-bottom: 12px; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 20px 0; }
+  .stat { background: var(--sand); border-radius: 12px; padding: 18px 16px; text-align: center; }
+  .stat .num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: var(--terracotta); }
+  .stat .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  th { text-align: left; padding: 10px 12px; background: var(--sand); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 600; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--sand); }
+  tr:last-child td { border-bottom: none; }
+
+  .grade { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; font-weight: 700; font-size: 14px; }
+  .grade-a { background: var(--green-light); color: var(--green); }
+  .grade-b { background: var(--sage-light); color: var(--sage); }
+  .grade-c { background: var(--gold-light); color: var(--gold); }
+  .grade-d { background: var(--coral-light); color: var(--coral); }
+  .grade-f { background: var(--red-light); color: var(--red); }
+
+  .finding { background: var(--sand); border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+  .finding:last-child { margin-bottom: 0; }
+  .finding-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; margin-bottom: 4px; }
+  .finding-label.good { color: var(--sage); }
+  .finding-label.concern { color: var(--coral); }
+  .finding-label.critical { color: var(--red); }
+  .finding-text { font-size: 13px; color: #444; line-height: 1.6; }
+
+  .expect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .expect-item { background: var(--sand); border-radius: 10px; padding: 16px; }
+  .expect-item .e-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--terracotta); font-weight: 600; margin-bottom: 6px; }
+  .expect-item .e-value { font-size: 13px; color: #444; line-height: 1.6; }
+
+  .dark-card { background: var(--warm); color: var(--cream); border-radius: 16px; padding: 32px; margin-bottom: 20px; }
+  .dark-card h2 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 16px; }
+
+  .footer { text-align: center; padding: 40px 24px; font-size: 12px; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    .header { padding: 36px 20px 30px; }
+    .header h1 { font-size: 28px; }
+    .card, .dark-card { padding: 24px 20px; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .expect-grid { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    body { background: white; }
+    .card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">Che Orika</div>
+  <h1>90-Day Performance Review</h1>
+  <p>Social Media Manager / May - July 2026</p>
+  <div class="period">Prepared by Marketing Lead</div>
+  <div class="confidential">Internal Document</div>
+</div>
+
+<div class="container">
+
+  <!-- Overview Stats -->
+  <div class="card">
+    <h2>The Numbers at a Glance</h2>
+    <div class="sub">May 4 - July 31, 2026</div>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="num">~34</div>
+        <div class="label">Unique Content Pieces</div>
+      </div>
+      <div class="stat">
+        <div class="num">66</div>
+        <div class="label">Total Posts (IG + TT)</div>
+      </div>
+      <div class="stat">
+        <div class="num">4.5</div>
+        <div class="label">Posts / Week</div>
+      </div>
+      <div class="stat">
+        <div class="num">~250</div>
+        <div class="label">Followers Gained</div>
+      </div>
+      <div class="stat">
+        <div class="num">3</div>
+        <div class="label">Sales from DMs</div>
+      </div>
+      <div class="stat">
+        <div class="num">N55K</div>
+        <div class="label">Total Ad Spend</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Performance by Area -->
+  <div class="card">
+    <h2>Performance by Area</h2>
+    <div class="sub">Honest assessment based on data from the content tracker and ad reports</div>
+
+    <table>
+      <tr>
+        <th>Area</th>
+        <th>Grade</th>
+        <th>Assessment</th>
+      </tr>
+      <tr>
+        <td><strong>Posting consistency</strong></td>
+        <td><span class="grade grade-b">B</span></td>
+        <td>4-5 posts per week in May and June. Solid. But July has zero posts logged in the tracker, either posting stopped or logging stopped.</td>
+      </tr>
+      <tr>
+        <td><strong>Content variety</strong></td>
+        <td><span class="grade grade-d">C-</span></td>
+        <td>27% styling, 24% trends/memes. Zero customer features. Zero educational content. Too much trend-chasing, not enough content built to sell.</td>
+      </tr>
+      <tr>
+        <td><strong>Founder visibility</strong></td>
+        <td><span class="grade grade-f">F</span></td>
+        <td>94% of posts had no founder visible. Only 2 unique pieces featured the founder. The tracker itself notes that founder presence correlates with better performance, but this was never acted on.</td>
+      </tr>
+      <tr>
+        <td><strong>CTAs and sales intent</strong></td>
+        <td><span class="grade grade-f">F</span></td>
+        <td>1 DM trigger CTA out of 66 posts. 33% of posts had no CTA at all. No prices on posts. For a brand selling through DMs, the content is not built to generate sales.</td>
+      </tr>
+      <tr>
+        <td><strong>Tracking and reporting</strong></td>
+        <td><span class="grade grade-d">D</span></td>
+        <td>The tracker exists and has 9 sheets. Only 1 is actively used (Content Log). Follower Growth sheet is empty. Decisions Made is empty. Audience Asks was abandoned after 3 entries. DMs are not logged.</td>
+      </tr>
+      <tr>
+        <td><strong>TikTok management</strong></td>
+        <td><span class="grade grade-d">D</span></td>
+        <td>Average TikTok reach: 653. Instagram: 1,308. Same content cross-posted without TikTok optimization. All bottom 5 posts are TikTok. One breakout (Devil Wears Prada at 5,254) but not replicated.</td>
+      </tr>
+      <tr>
+        <td><strong>Strategic thinking</strong></td>
+        <td><span class="grade grade-d">D+</span></td>
+        <td>Following a posting schedule but not thinking about what drives conversions vs what gets views. Suggested reducing to 3x/week for a new brand. Insights from experiments not applied consistently.</td>
+      </tr>
+      <tr>
+        <td><strong>Proactiveness</strong></td>
+        <td><span class="grade grade-d">C-</span></td>
+        <td>Not bringing new ideas or flagging problems. Waiting to be told rather than proposing solutions. No content types that weren't already suggested by management.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Content Breakdown -->
+  <div class="card">
+    <h2>What Was Posted</h2>
+    <div class="sub">Content category breakdown across 66 posts</div>
+
+    <table>
+      <tr><th>Category</th><th>Posts</th><th>%</th><th>Note</th></tr>
+      <tr><td>Styling</td><td>18</td><td>27%</td><td>Most consistent category. Workhouse content.</td></tr>
+      <tr><td>Trend / Meme</td><td>16</td><td>24%</td><td>Heavy. Gets views but not sales.</td></tr>
+      <tr><td>Product Spotlight</td><td>10</td><td>15%</td><td>Good, but no prices on screen.</td></tr>
+      <tr><td>Drop / Restock</td><td>8</td><td>12%</td><td>Functional but lacks sales CTA.</td></tr>
+      <tr><td>BTS / Studio</td><td>8</td><td>12%</td><td>Fine for Stories, taking up too much feed space.</td></tr>
+      <tr><td>Lifestyle</td><td>6</td><td>9%</td><td>Best organic performers. Should be doing more.</td></tr>
+      <tr><td>Founder Voice</td><td>2</td><td>3%</td><td>Almost non-existent. Major gap.</td></tr>
+      <tr><td style="color: var(--red);">Customer Feature</td><td style="color: var(--red);">0</td><td style="color: var(--red);">0%</td><td style="color: var(--red);">Zero. Highest-converting format not used.</td></tr>
+      <tr><td style="color: var(--red);">Educational</td><td style="color: var(--red);">0</td><td style="color: var(--red);">0%</td><td style="color: var(--red);">Zero. Builds trust and searchability.</td></tr>
+    </table>
+  </div>
+
+  <!-- Top and Bottom Performers -->
+  <div class="card">
+    <h2>Top 5 Posts by Reach</h2>
+    <table>
+      <tr><th>ID</th><th>Platform</th><th>Description</th><th>Reach</th><th>Saves</th><th>Shares</th></tr>
+      <tr><td>CO-030</td><td>IG</td><td>Spot the store challenge (boosted N27K)</td><td><strong>30,233</strong></td><td>1</td><td>6</td></tr>
+      <tr><td>CO-026</td><td>IG</td><td>Announcing store launch (boosted N17K)</td><td><strong>6,995</strong></td><td>14</td><td>16</td></tr>
+      <tr><td>CO-011</td><td>IG</td><td>Bloom set product spotlight</td><td><strong>5,905</strong></td><td>15</td><td>9</td></tr>
+      <tr><td>CO-006</td><td>TT</td><td>Devil Wears Prada trend</td><td><strong>5,254</strong></td><td>4</td><td>17</td></tr>
+      <tr><td>CO-012</td><td>IG</td><td>Marina bay brunch lifestyle</td><td><strong>5,165</strong></td><td>16</td><td>5</td></tr>
+    </table>
+
+    <h2 style="margin-top: 28px;">Bottom 5 Posts by Reach</h2>
+    <table>
+      <tr><th>ID</th><th>Platform</th><th>Description</th><th>Reach</th></tr>
+      <tr><td>CO-002</td><td>TT</td><td>Restocking Best Sellers</td><td>205</td></tr>
+      <tr><td>CO-005</td><td>TT</td><td>New drops snippet</td><td>207</td></tr>
+      <tr><td>CO-026</td><td>TT</td><td>Announcing store launch</td><td>209</td></tr>
+      <tr><td>CO-004</td><td>TT</td><td>Styling Kira set 3 ways</td><td>216</td></tr>
+      <tr><td>CO-003</td><td>TT</td><td>BTS of production</td><td>237</td></tr>
+    </table>
+    <p style="margin-top: 12px; font-size: 13px; color: var(--muted);">All bottom performers are TikTok. The cross-posting strategy is not working for TikTok.</p>
+  </div>
+
+  <!-- Key Findings -->
+  <div class="card">
+    <h2>Key Findings</h2>
+    <div class="sub">What the data tells us</div>
+
+    <div class="finding">
+      <div class="finding-label good">Working</div>
+      <div class="finding-text">Posting frequency of 4-5x/week was maintained in May-June. The styling content is a reliable workhorse. The Content Ideas sheet shows 45 ideas were brainstormed with reference links, showing initiative in the planning phase. Lifestyle content (outdoor, brunch) consistently outperforms other organic content.</div>
+    </div>
+
+    <div class="finding">
+      <div class="finding-label concern">Concern</div>
+      <div class="finding-text">24% of all content is trends and memes. This gets views but does not generate DMs or sales. The brand is at risk of being perceived as an entertainment page rather than a fashion brand you buy from. TikTok is significantly underperforming Instagram with no optimization. The tracker has 9 sheets but only 1 is being used.</div>
+    </div>
+
+    <div class="finding">
+      <div class="finding-label critical">Critical</div>
+      <div class="finding-text">Only 1 out of 66 posts had a "DM to order" CTA. No prices appear on any posts. DMs are not being tracked. 3 sales in 3 months from the entire online presence. The content is not built to convert attention into revenue. The Follower Growth sheet is completely empty, meaning we do not have verified week-by-week growth data.</div>
+    </div>
+  </div>
+
+  <!-- Platform Comparison -->
+  <div class="card">
+    <h2>Instagram vs TikTok</h2>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="num">35</div>
+        <div class="label">Instagram Posts</div>
+      </div>
+      <div class="stat">
+        <div class="num">~1,308</div>
+        <div class="label">IG Avg Organic Reach</div>
+      </div>
+      <div class="stat">
+        <div class="num">31</div>
+        <div class="label">TikTok Posts</div>
+      </div>
+      <div class="stat">
+        <div class="num">~653</div>
+        <div class="label">TT Avg Reach</div>
+      </div>
+    </div>
+    <p style="font-size: 13px; color: var(--muted);">Instagram outperforms TikTok by 2x on organic reach. Cross-posting the same content to both platforms without optimization is not working. TikTok requires native content or a different strategy.</p>
+  </div>
+
+  <!-- Ad Performance -->
+  <div class="card">
+    <h2>Ad Performance Summary</h2>
+    <div class="sub">May - July 2026</div>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="num">N55K</div>
+        <div class="label">Total Ad Spend</div>
+      </div>
+      <div class="stat">
+        <div class="num">9</div>
+        <div class="label">Conversations Started</div>
+      </div>
+      <div class="stat">
+        <div class="num">N6,162</div>
+        <div class="label">Cost Per Conversation</div>
+      </div>
+      <div class="stat">
+        <div class="num">3</div>
+        <div class="label">Confirmed Sales</div>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="finding-label critical">Issue</div>
+      <div class="finding-text">N20,000 was spent on an engagement-objective ad (optimized for likes, not messages). This generated 18,698 likes but only 2 conversations. Both message-objective ads had "Below average" conversion rate rankings from Meta. Cost per conversation should be under N1,500. It is currently N6,162.</div>
+    </div>
+  </div>
+
+  <!-- Expectations Going Forward -->
+  <div class="dark-card">
+    <h2>Expectations for August - October</h2>
+
+    <div class="expect-grid" style="margin-top: 16px;">
+      <div class="expect-item" style="background: rgba(255,255,255,0.08);">
+        <div class="e-label" style="color: var(--terracotta);">Posting Frequency</div>
+        <div class="e-value" style="color: rgba(250,247,242,0.85);">4-5 posts per week on the feed. Daily Stories. Everything cross-posted to TikTok. 3x/week is not acceptable for a brand at our stage.</div>
+      </div>
+      <div class="expect-item" style="background: rgba(255,255,255,0.08);">
+        <div class="e-label" style="color: var(--terracotta);">Content Framework</div>
+        <div class="e-value" style="color: rgba(250,247,242,0.85);">All content must follow the 7 content types in the framework: The Runway, Shop & Chat, The Switch Up, Dates with CO, Real Talk, Voice & Vibes, Spotted. No more random posting.</div>
+      </div>
+      <div class="expect-item" style="background: rgba(255,255,255,0.08);">
+        <div class="e-label" style="color: var(--terracotta);">Prices on Everything</div>
+        <div class="e-value" style="color: rgba(250,247,242,0.85);">Every post that shows a product must include the piece name and price. On screen in videos. In the caption. No exceptions.</div>
+      </div>
+      <div class="expect-item" style="background: rgba(255,255,255,0.08);">
+        <div class="e-label" style="color: var(--terracotta);">CTA on Everything</div>
+        <div class="e-value" style="color: rgba(250,247,242,0.85);">Every product post must have a clear CTA: "DM your size to order." No more posts that show clothes without telling people how to buy.</div>
+      </div>
+      <div class="expect-item" style="background: rgba(255,255,255,0.08);">
+        <div class="e-label" style="color: var(--terracotta);">Weekly Reporting</div>
+        <div class="e-value" style="color: rgba(250,247,242,0.85);">Every Friday: posts published, saves, shares, DMs received, DMs converted to sales, follower count. Use the tracker. Fill in every column.</div>
+      </div>
+      <div class="expect-item" style="background: rgba(255,255,255,0.08);">
+        <div class="e-label" style="color: var(--terracotta);">DM Response Time</div>
+        <div class="e-value" style="color: rgba(250,247,242,0.85);">Under 30 minutes during business hours. This alone could 3x our conversion rate.</div>
+      </div>
+      <div class="expect-item" style="background: rgba(255,255,255,0.08);">
+        <div class="e-label" style="color: var(--terracotta);">Founder Visibility</div>
+        <div class="e-value" style="color: rgba(250,247,242,0.85);">The founder should appear in at least 40% of content. Not optional. Data shows founder presence drives better performance.</div>
+      </div>
+      <div class="expect-item" style="background: rgba(255,255,255,0.08);">
+        <div class="e-label" style="color: var(--terracotta);">Review Cadence</div>
+        <div class="e-value" style="color: rgba(250,247,242,0.85);">Bi-weekly content review using the tracker data. Monthly check-in on strategy. Next formal review: end of October.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conversation Guide -->
+  <div class="card">
+    <h2>Review Meeting Guide</h2>
+    <div class="sub">How to run the conversation</div>
+
+    <p><strong>1. Start with her self-assessment.</strong> Let her talk first. Listen to how she sees her own performance. Don't interrupt. Take notes on where her perception matches the data and where it doesn't.</p>
+
+    <p><strong>2. Share the data.</strong> Walk through the numbers calmly. This is not about punishment. It's about showing her what the data says so she can see it herself. Focus on the gaps: DM triggers, prices, founder visibility, TikTok.</p>
+
+    <p><strong>3. Acknowledge what worked.</strong> She maintained posting frequency. She brainstormed 45 content ideas. She managed the launch content. Give credit where it's due.</p>
+
+    <p><strong>4. Be direct about what needs to change.</strong> The content is not built to sell. That's the core issue. Everything else (prices, CTAs, tracking) flows from that one problem. She needs to shift from "content poster" to "content that makes money."</p>
+
+    <p><strong>5. Present the framework.</strong> Show her the content framework. This is the system going forward. She doesn't have to figure out what to post anymore. The system tells her. Her job is to execute it well.</p>
+
+    <p><strong>6. Ask what she needs.</strong> Maybe she needs training. Maybe she needs clearer direction. Maybe she needs better tools. This is a two-way conversation.</p>
+
+    <p><strong>7. Set clear next steps.</strong> Content calendar for August due by [date]. Weekly reporting starts this Friday. First Runway video shoots this week. Prices on the last 15 posts updated by [date].</p>
+  </div>
+
+  <div class="footer">
+    Che Orika / 90-Day Performance Review / August 2026 / Internal & Confidential
+  </div>
+
+</div>
+</body>
+</html>
