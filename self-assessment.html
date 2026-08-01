@@ -9,310 +9,323 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
     --ink: #1a1a1a; --warm: #2c2420; --cream: #faf7f2; --sand: #f0ebe3;
-    --terracotta: #c4704b; --terracotta-light: #f5e6dd; --sage: #7a8b6f;
-    --sage-light: #e8ede5; --gold: #b8963e; --gold-light: #f5f0e0;
-    --muted: #8a8078; --sky: #5a7d95; --sky-light: #e2ecf1;
+    --terracotta: #c4704b; --terracotta-light: #f5e6dd;
+    --muted: #8a8078; --green: #27ae60;
   }
   body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-  .header { background: var(--warm); color: var(--cream); padding: 50px 40px 40px; text-align: center; }
-  .header-brand { font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 14px; }
-  .header h1 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; margin-bottom: 10px; }
-  .header p { font-size: 14px; color: rgba(250,247,242,0.65); max-width: 520px; margin: 0 auto; font-weight: 300; }
-  .header .period { display: inline-block; margin-top: 16px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(250,247,242,0.4); }
+  .header { background: var(--warm); color: var(--cream); padding: 48px 24px 40px; text-align: center; }
+  .header-brand { font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
+  .header h1 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 400; margin-bottom: 8px; }
+  .header p { font-size: 14px; color: rgba(250,247,242,0.6); max-width: 480px; margin: 0 auto; }
+  .header .deadline { display: inline-block; margin-top: 14px; background: rgba(196,112,75,0.3); padding: 6px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--terracotta); }
 
-  .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; }
+  .container { max-width: 640px; margin: 0 auto; padding: 32px 20px 80px; }
 
-  .intro-box { background: white; border-radius: 16px; padding: 32px; margin-bottom: 32px; border: 1px solid rgba(0,0,0,0.06); }
-  .intro-box h2 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 10px; }
-  .intro-box p { font-size: 14px; color: var(--muted); line-height: 1.7; }
-  .intro-box .highlight { color: var(--ink); font-weight: 500; }
+  .intro { background: white; border-radius: 14px; padding: 24px; margin-bottom: 28px; border: 1px solid rgba(0,0,0,0.06); font-size: 14px; color: var(--muted); line-height: 1.7; }
 
-  .section { background: white; border-radius: 16px; padding: 32px; margin-bottom: 20px; border: 1px solid rgba(0,0,0,0.06); }
-  .section-number { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 6px; }
-  .section h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 6px; }
-  .section .sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+  .q-card { background: white; border-radius: 14px; padding: 24px; margin-bottom: 16px; border: 1px solid rgba(0,0,0,0.06); }
+  .q-num { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--terracotta); font-weight: 600; margin-bottom: 6px; }
+  .q-text { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .q-hint { font-size: 12.5px; color: var(--muted); margin-bottom: 12px; font-style: italic; }
 
-  .question { margin-bottom: 24px; }
-  .question:last-child { margin-bottom: 0; }
-  .q-label { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
-  .q-hint { font-size: 12.5px; color: var(--muted); margin-bottom: 8px; font-style: italic; }
-  .q-input { width: 100%; min-height: 80px; border: 1px solid var(--sand); border-radius: 10px; padding: 14px; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--ink); background: var(--cream); resize: vertical; line-height: 1.6; }
-  .q-input:focus { outline: none; border-color: var(--terracotta); }
-  .q-input-short { min-height: 44px; }
+  textarea { width: 100%; min-height: 100px; border: 1.5px solid var(--sand); border-radius: 10px; padding: 14px; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--ink); background: var(--cream); resize: vertical; line-height: 1.6; transition: border-color 0.2s; }
+  textarea:focus { outline: none; border-color: var(--terracotta); background: white; }
 
-  .rating-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
-  .rating-option { display: flex; align-items: center; gap: 6px; padding: 8px 14px; border: 1px solid var(--sand); border-radius: 8px; font-size: 13px; cursor: pointer; transition: all 0.15s; }
-  .rating-option:hover { border-color: var(--terracotta); background: var(--terracotta-light); }
-  .rating-option input { accent-color: var(--terracotta); }
+  .rating-row { display: flex; gap: 6px; margin-top: 8px; }
+  .rating-btn { flex: 1; padding: 10px 0; border: 1.5px solid var(--sand); border-radius: 8px; background: white; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; text-align: center; transition: all 0.15s; }
+  .rating-btn:hover { border-color: var(--terracotta); color: var(--terracotta); }
+  .rating-btn.selected { background: var(--terracotta); color: white; border-color: var(--terracotta); }
+  .rating-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 4px; padding: 0 4px; }
 
-  .divider { height: 1px; background: var(--sand); margin: 24px 0; }
+  .section-divider { text-align: center; padding: 20px 0; }
+  .section-divider span { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--muted); }
 
-  .note-box { background: var(--gold-light); border-radius: 10px; padding: 16px; font-size: 13px; color: var(--warm); margin-top: 16px; }
+  .submit-area { margin-top: 32px; }
+  .submit-btn { width: 100%; padding: 16px; border: none; border-radius: 12px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .btn-whatsapp { background: #25D366; color: white; }
+  .btn-whatsapp:hover { background: #1da851; }
+  .btn-email { background: var(--warm); color: var(--cream); }
+  .btn-email:hover { background: #3a302a; }
+  .btn-copy { background: white; color: var(--ink); border: 1.5px solid var(--sand); }
+  .btn-copy:hover { border-color: var(--terracotta); color: var(--terracotta); }
 
-  .submit-section { background: var(--warm); color: var(--cream); border-radius: 16px; padding: 32px; margin-top: 32px; text-align: center; }
-  .submit-section h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 10px; }
-  .submit-section p { font-size: 14px; color: rgba(250,247,242,0.7); max-width: 500px; margin: 0 auto; }
+  .or-divider { text-align: center; font-size: 12px; color: var(--muted); margin: 6px 0; }
 
-  .footer { text-align: center; padding: 40px 24px; font-size: 12px; color: var(--muted); }
+  .saved-notice { display: none; background: #e8f5e9; border-radius: 10px; padding: 14px; text-align: center; font-size: 14px; color: var(--green); font-weight: 500; margin-top: 12px; }
+  .saved-notice.visible { display: block; }
+
+  .progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--terracotta); transition: width 0.3s; z-index: 100; }
+
+  .footer { text-align: center; padding: 32px 20px; font-size: 12px; color: var(--muted); }
 
   @media (max-width: 640px) {
     .header { padding: 36px 20px 30px; }
-    .header h1 { font-size: 28px; }
-    .section, .intro-box { padding: 24px 20px; }
-    .rating-group { flex-direction: column; }
-  }
-
-  @media print {
-    .q-input { border: 1px solid #ccc; min-height: 120px; }
-    body { background: white; }
-    .header { break-after: avoid; }
+    .header h1 { font-size: 26px; }
   }
 </style>
 </head>
 <body>
 
+<div class="progress" id="progress"></div>
+
 <div class="header">
   <div class="header-brand">Che Orika</div>
   <h1>90-Day Self Assessment</h1>
-  <p>This is your opportunity to reflect on the last 3 months, what went well, what you'd do differently, and where you want to grow.</p>
-  <div class="period">May - July 2026 / Social Media Manager</div>
+  <p>Reflect on your first 3 months. Be honest. This is for growth, not judgement.</p>
+  <div class="deadline">Due: Monday, August 4th</div>
 </div>
 
 <div class="container">
 
-  <div class="intro-box">
-    <h2>Before You Start</h2>
-    <p>
-      This is <span class="highlight">not a test.</span> There are no right or wrong answers. This is a reflection exercise so we can have an honest conversation about the last 3 months and align on where we're going next.
-    </p>
-    <p style="margin-top: 10px;">
-      Be honest. The more real your answers are, the more useful this conversation will be for both of us. If something didn't work, say so. If you need support or tools or clarity on something, this is where you say it.
-    </p>
-    <p style="margin-top: 10px;">
-      <span class="highlight">Please complete this by Monday.</span> We will go through it together in our review meeting.
-    </p>
+  <div class="intro">
+    This is not a test. There are no right or wrong answers. Be honest about what went well and what didn't. Your answers are saved automatically as you type. When you're done, send them via WhatsApp or email at the bottom.
   </div>
 
-  <!-- Section 1: The Big Picture -->
-  <div class="section">
-    <div class="section-number">Section 1</div>
-    <h3>The Big Picture</h3>
-    <div class="sub">How you see the last 3 months overall</div>
-
-    <div class="question">
-      <div class="q-label">How would you describe your first 3 months managing Che Orika's social media?</div>
-      <div class="q-hint">In your own words. What was it like? How did it feel?</div>
-      <textarea class="q-input" placeholder="Type your answer here..."></textarea>
-    </div>
-
-    <div class="question">
-      <div class="q-label">What are you most proud of from the last 3 months?</div>
-      <div class="q-hint">Specific posts, campaigns, moments, skills you developed, anything.</div>
-      <textarea class="q-input" placeholder="Type your answer here..."></textarea>
-    </div>
-
-    <div class="question">
-      <div class="q-label">What would you do differently if you could start over?</div>
-      <div class="q-hint">Be honest. What didn't work? What would you change?</div>
-      <textarea class="q-input" placeholder="Type your answer here..."></textarea>
-    </div>
+  <!-- Q1 -->
+  <div class="q-card">
+    <div class="q-num">Question 1</div>
+    <div class="q-text">How would you describe your first 3 months managing Che Orika's social media?</div>
+    <div class="q-hint">In your own words. What was it like?</div>
+    <textarea id="q1" placeholder="Type here..." oninput="autoSave()"></textarea>
   </div>
 
-  <!-- Section 2: Content Strategy -->
-  <div class="section">
-    <div class="section-number">Section 2</div>
-    <h3>Content Strategy</h3>
-    <div class="sub">How you think about what to post and why</div>
-
-    <div class="question">
-      <div class="q-label">When you decide what to post for the week, what is your process?</div>
-      <div class="q-hint">How do you choose what content to create? What guides your decisions?</div>
-      <textarea class="q-input" placeholder="Type your answer here..."></textarea>
-    </div>
-
-    <div class="question">
-      <div class="q-label">Which content type do you think performed best for Che Orika? Why?</div>
-      <div class="q-hint">Think about what got the most saves, shares, and DMs, not just likes.</div>
-      <textarea class="q-input" placeholder="Type your answer here..."></textarea>
-    </div>
-
-    <div class="question">
-      <div class="q-label">Which content type do you think did NOT work? Why?</div>
-      <textarea class="q-input" placeholder="Type your answer here..."></textarea>
-    </div>
-
-    <div class="question">
-      <div class="q-label">How many posts per week do you think Che Orika should be posting? Why?</div>
-      <div class="q-hint">Be honest about what you think is the right number and why.</div>
-      <textarea class="q-input" placeholder="Type your answer here..."></textarea>
-    </div>
-
-    <div class="question">
-      <div class="q-label">Do you feel like the content we've been posting positions Che Orika as a brand people want to BUY from, or just a page people watch?</div>
-      <textarea class="q-input" placeholder="Type your answer here..."></textarea>
-    </div>
+  <!-- Q2 -->
+  <div class="q-card">
+    <div class="q-num">Question 2</div>
+    <div class="q-text">What are you most proud of?</div>
+    <div class="q-hint">A specific post, campaign, moment, or skill you developed.</div>
+    <textarea id="q2" placeholder="Type here..." oninput="autoSave()"></textarea>
   </div>
 
-  <!-- Section 3: Rate Yourself -->
-  <div class="section">
-    <div class="section-number">Section 3</div>
-    <h3>Rate Yourself</h3>
-    <div class="sub">Be honest. 1 = I need a lot of improvement. 5 = I'm confident in this area.</div>
-
-    <div class="question">
-      <div class="q-label">Content creation (filming, editing, visuals)</div>
-      <div class="rating-group">
-        <label class="rating-option"><input type="radio" name="r1" value="1"> 1 - Needs work</label>
-        <label class="rating-option"><input type="radio" name="r1" value="2"> 2</label>
-        <label class="rating-option"><input type="radio" name="r1" value="3"> 3 - Average</label>
-        <label class="rating-option"><input type="radio" name="r1" value="4"> 4</label>
-        <label class="rating-option"><input type="radio" name="r1" value="5"> 5 - Strong</label>
-      </div>
-    </div>
-
-    <div class="question">
-      <div class="q-label">Content strategy (knowing what to post and why)</div>
-      <div class="rating-group">
-        <label class="rating-option"><input type="radio" name="r2" value="1"> 1 - Needs work</label>
-        <label class="rating-option"><input type="radio" name="r2" value="2"> 2</label>
-        <label class="rating-option"><input type="radio" name="r2" value="3"> 3 - Average</label>
-        <label class="rating-option"><input type="radio" name="r2" value="4"> 4</label>
-        <label class="rating-option"><input type="radio" name="r2" value="5"> 5 - Strong</label>
-      </div>
-    </div>
-
-    <div class="question">
-      <div class="q-label">Understanding what drives sales (not just views)</div>
-      <div class="rating-group">
-        <label class="rating-option"><input type="radio" name="r3" value="1"> 1 - Needs work</label>
-        <label class="rating-option"><input type="radio" name="r3" value="2"> 2</label>
-        <label class="rating-option"><input type="radio" name="r3" value="3"> 3 - Average</label>
-        <label class="rating-option"><input type="radio" name="r3" value="4"> 4</label>
-        <label class="rating-option"><input type="radio" name="r3" value="5"> 5 - Strong</label>
-      </div>
-    </div>
-
-    <div class="question">
-      <div class="q-label">Tracking and reporting (logging metrics, analyzing what works)</div>
-      <div class="rating-group">
-        <label class="rating-option"><input type="radio" name="r4" value="1"> 1 - Needs work</label>
-        <label class="rating-option"><input type="radio" name="r4" value="2"> 2</label>
-        <label class="rating-option"><input type="radio" name="r4" value="3"> 3 - Average</label>
-        <label class="rating-option"><input type="radio" name="r4" value="4"> 4</label>
-        <label class="rating-option"><input type="radio" name="r4" value="5"> 5 - Strong</label>
-      </div>
-    </div>
-
-    <div class="question">
-      <div class="q-label">Proactiveness (bringing ideas, flagging problems, not waiting to be told)</div>
-      <div class="rating-group">
-        <label class="rating-option"><input type="radio" name="r5" value="1"> 1 - Needs work</label>
-        <label class="rating-option"><input type="radio" name="r5" value="2"> 2</label>
-        <label class="rating-option"><input type="radio" name="r5" value="3"> 3 - Average</label>
-        <label class="rating-option"><input type="radio" name="r5" value="4"> 4</label>
-        <label class="rating-option"><input type="radio" name="r5" value="5"> 5 - Strong</label>
-      </div>
-    </div>
-
-    <div class="question">
-      <div class="q-label">TikTok (understanding the platform, creating TikTok-native content)</div>
-      <div class="rating-group">
-        <label class="rating-option"><input type="radio" name="r6" value="1"> 1 - Needs work</label>
-        <label class="rating-option"><input type="radio" name="r6" value="2"> 2</label>
-        <label class="rating-option"><input type="radio" name="r6" value="3"> 3 - Average</label>
-        <label class="rating-option"><input type="radio" name="r6" value="4"> 4</label>
-        <label class="rating-option"><input type="radio" name="r6" value="5"> 5 - Strong</label>
-      </div>
-    </div>
-
-    <div class="question">
-      <div class="q-label">Community management (replying to DMs, comments, engaging with followers)</div>
-      <div class="rating-group">
-        <label class="rating-option"><input type="radio" name="r7" value="1"> 1 - Needs work</label>
-        <label class="rating-option"><input type="radio" name="r7" value="2"> 2</label>
-        <label class="rating-option"><input type="radio" name="r7" value="3"> 3 - Average</label>
-        <label class="rating-option"><input type="radio" name="r7" value="4"> 4</label>
-        <label class="rating-option"><input type="radio" name="r7" value="5"> 5 - Strong</label>
-      </div>
-    </div>
-
-    <div class="question">
-      <div class="q-label">Writing captions that sell (not just describe)</div>
-      <div class="rating-group">
-        <label class="rating-option"><input type="radio" name="r8" value="1"> 1 - Needs work</label>
-        <label class="rating-option"><input type="radio" name="r8" value="2"> 2</label>
-        <label class="rating-option"><input type="radio" name="r8" value="3"> 3 - Average</label>
-        <label class="rating-option"><input type="radio" name="r8" value="4"> 4</label>
-        <label class="rating-option"><input type="radio" name="r8" value="5"> 5 - Strong</label>
-      </div>
-    </div>
+  <!-- Q3 -->
+  <div class="q-card">
+    <div class="q-num">Question 3</div>
+    <div class="q-text">What would you do differently if you could start over?</div>
+    <textarea id="q3" placeholder="Type here..." oninput="autoSave()"></textarea>
   </div>
 
-  <!-- Section 4: Platforms -->
-  <div class="section">
-    <div class="section-number">Section 4</div>
-    <h3>Platforms</h3>
-    <div class="sub">Instagram, TikTok, and beyond</div>
+  <div class="section-divider"><span>Content & Strategy</span></div>
 
-    <div class="question">
-      <div class="q-label">How do you feel about our TikTok performance?</div>
-      <div class="q-hint">Be honest. Is it working? What's the challenge?</div>
-      <textarea class="q-input" placeholder="Type your answer here..."></textarea>
-    </div>
-
-    <div class="question">
-      <div class="q-label">Do you think we should be doing anything differently on TikTok vs Instagram?</div>
-      <textarea class="q-input" placeholder="Type your answer here..."></textarea>
-    </div>
-
-    <div class="question">
-      <div class="q-label">How quickly do you typically respond to DMs and comments? Be honest.</div>
-      <textarea class="q-input q-input-short" placeholder="Type your answer here..."></textarea>
-    </div>
+  <!-- Q4 -->
+  <div class="q-card">
+    <div class="q-num">Question 4</div>
+    <div class="q-text">Do you feel like our content makes people want to BUY, or just watch?</div>
+    <div class="q-hint">Be honest. Are we a store people shop from or a page people scroll past?</div>
+    <textarea id="q4" placeholder="Type here..." oninput="autoSave()"></textarea>
   </div>
 
-  <!-- Section 5: Going Forward -->
-  <div class="section">
-    <div class="section-number">Section 5</div>
-    <h3>Going Forward</h3>
-    <div class="sub">August - October and beyond</div>
+  <!-- Q5 -->
+  <div class="q-card">
+    <div class="q-num">Question 5</div>
+    <div class="q-text">How many posts per week should we be posting? Why?</div>
+    <textarea id="q5" placeholder="Type here..." oninput="autoSave()"></textarea>
+  </div>
 
-    <div class="question">
-      <div class="q-label">What do you think Che Orika needs to do differently in the next 3 months to grow?</div>
-      <textarea class="q-input" placeholder="Type your answer here..."></textarea>
-    </div>
+  <!-- Q6 -->
+  <div class="q-card">
+    <div class="q-num">Question 6</div>
+    <div class="q-text">How quickly do you respond to DMs and comments?</div>
+    <div class="q-hint">Be honest about your typical response time.</div>
+    <textarea id="q6" placeholder="Type here..." oninput="autoSave()"></textarea>
+  </div>
 
-    <div class="question">
-      <div class="q-label">What do YOU need to do your job better?</div>
-      <div class="q-hint">Tools, training, clearer direction, more support, more creative freedom, anything.</div>
-      <textarea class="q-input" placeholder="Type your answer here..."></textarea>
-    </div>
+  <div class="section-divider"><span>Rate Yourself (1-5)</span></div>
 
-    <div class="question">
-      <div class="q-label">What are 3 specific things you want to improve about yourself in the next 3 months?</div>
-      <textarea class="q-input" placeholder="1.
+  <!-- R1 -->
+  <div class="q-card">
+    <div class="q-num">Rating</div>
+    <div class="q-text">Content strategy (knowing what to post and why)</div>
+    <div class="rating-row" id="r1"></div>
+    <div class="rating-label"><span>Needs work</span><span>Strong</span></div>
+  </div>
+
+  <!-- R2 -->
+  <div class="q-card">
+    <div class="q-num">Rating</div>
+    <div class="q-text">Understanding what drives sales (not just views)</div>
+    <div class="rating-row" id="r2"></div>
+    <div class="rating-label"><span>Needs work</span><span>Strong</span></div>
+  </div>
+
+  <!-- R3 -->
+  <div class="q-card">
+    <div class="q-num">Rating</div>
+    <div class="q-text">Tracking and reporting (logging data, analyzing performance)</div>
+    <div class="rating-row" id="r3"></div>
+    <div class="rating-label"><span>Needs work</span><span>Strong</span></div>
+  </div>
+
+  <!-- R4 -->
+  <div class="q-card">
+    <div class="q-num">Rating</div>
+    <div class="q-text">Proactiveness (bringing ideas without being asked)</div>
+    <div class="rating-row" id="r4"></div>
+    <div class="rating-label"><span>Needs work</span><span>Strong</span></div>
+  </div>
+
+  <!-- R5 -->
+  <div class="q-card">
+    <div class="q-num">Rating</div>
+    <div class="q-text">TikTok (creating content that works on TikTok specifically)</div>
+    <div class="rating-row" id="r5"></div>
+    <div class="rating-label"><span>Needs work</span><span>Strong</span></div>
+  </div>
+
+  <div class="section-divider"><span>Going Forward</span></div>
+
+  <!-- Q7 -->
+  <div class="q-card">
+    <div class="q-num">Question 7</div>
+    <div class="q-text">What do YOU need to do your job better?</div>
+    <div class="q-hint">Tools, training, clearer direction, more support, anything.</div>
+    <textarea id="q7" placeholder="Type here..." oninput="autoSave()"></textarea>
+  </div>
+
+  <!-- Q8 -->
+  <div class="q-card">
+    <div class="q-num">Question 8</div>
+    <div class="q-text">Name 3 things you want to improve about yourself in the next 3 months.</div>
+    <textarea id="q8" placeholder="1.
 2.
-3. "></textarea>
-    </div>
-
-    <div class="question">
-      <div class="q-label">Is there anything you want to say that wasn't covered above?</div>
-      <div class="q-hint">Anything at all. This is your space.</div>
-      <textarea class="q-input" placeholder="Type your answer here..."></textarea>
-    </div>
+3." oninput="autoSave()"></textarea>
   </div>
 
   <!-- Submit -->
-  <div class="submit-section">
-    <h3>Thank You</h3>
-    <p>Please complete this by Monday. We will go through your answers together in our review meeting. This is not about judgement. It's about getting on the same page so the next 3 months are better than the last 3.</p>
-  </div>
-
-  <div class="footer">
-    Che Orika / 90-Day Self Assessment / August 2026
+  <div class="submit-area">
+    <button class="submit-btn btn-whatsapp" onclick="sendWhatsApp()">
+      Send via WhatsApp
+    </button>
+    <div class="or-divider">or</div>
+    <button class="submit-btn btn-email" onclick="sendEmail()">
+      Send via Email
+    </button>
+    <div class="or-divider">or</div>
+    <button class="submit-btn btn-copy" onclick="copyAll()">
+      Copy All Answers
+    </button>
+    <div class="saved-notice" id="savedNotice">Copied to clipboard!</div>
   </div>
 
 </div>
+
+<div class="footer">
+  Che Orika | 90-Day Self Assessment | August 2026
+</div>
+
+<script>
+  // Rating buttons
+  const ratingIds = ['r1','r2','r3','r4','r5'];
+  const ratingValues = {};
+
+  ratingIds.forEach(id => {
+    const container = document.getElementById(id);
+    ratingValues[id] = 0;
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'rating-btn';
+      btn.textContent = i;
+      btn.onclick = () => {
+        container.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        ratingValues[id] = i;
+        autoSave();
+        updateProgress();
+      };
+      container.appendChild(btn);
+    }
+  });
+
+  // Auto-save to localStorage
+  function autoSave() {
+    const data = getAllAnswers();
+    localStorage.setItem('co-self-assessment', JSON.stringify(data));
+    updateProgress();
+  }
+
+  // Load saved answers
+  function loadSaved() {
+    const saved = localStorage.getItem('co-self-assessment');
+    if (!saved) return;
+    const data = JSON.parse(saved);
+    ['q1','q2','q3','q4','q5','q6','q7','q8'].forEach(id => {
+      if (data[id]) document.getElementById(id).value = data[id];
+    });
+    ratingIds.forEach(id => {
+      if (data[id]) {
+        ratingValues[id] = data[id];
+        const btns = document.getElementById(id).querySelectorAll('.rating-btn');
+        btns[data[id] - 1].classList.add('selected');
+      }
+    });
+    updateProgress();
+  }
+
+  function getAllAnswers() {
+    return {
+      q1: document.getElementById('q1').value,
+      q2: document.getElementById('q2').value,
+      q3: document.getElementById('q3').value,
+      q4: document.getElementById('q4').value,
+      q5: document.getElementById('q5').value,
+      q6: document.getElementById('q6').value,
+      q7: document.getElementById('q7').value,
+      q8: document.getElementById('q8').value,
+      r1: ratingValues.r1,
+      r2: ratingValues.r2,
+      r3: ratingValues.r3,
+      r4: ratingValues.r4,
+      r5: ratingValues.r5
+    };
+  }
+
+  function formatAnswers() {
+    const d = getAllAnswers();
+    const rLabels = {r1:'Content Strategy', r2:'Sales Understanding', r3:'Tracking & Reporting', r4:'Proactiveness', r5:'TikTok'};
+    let text = `CHE ORIKA - 90-DAY SELF ASSESSMENT\n\n`;
+    text += `1. First 3 months:\n${d.q1 || '(not answered)'}\n\n`;
+    text += `2. Most proud of:\n${d.q2 || '(not answered)'}\n\n`;
+    text += `3. Would do differently:\n${d.q3 || '(not answered)'}\n\n`;
+    text += `4. Content = buying or watching?:\n${d.q4 || '(not answered)'}\n\n`;
+    text += `5. Posts per week:\n${d.q5 || '(not answered)'}\n\n`;
+    text += `6. DM response time:\n${d.q6 || '(not answered)'}\n\n`;
+    text += `RATINGS (1-5):\n`;
+    ratingIds.forEach(id => { text += `${rLabels[id]}: ${d[id] || '-'}/5\n`; });
+    text += `\n7. What I need:\n${d.q7 || '(not answered)'}\n\n`;
+    text += `8. 3 things to improve:\n${d.q8 || '(not answered)'}`;
+    return text;
+  }
+
+  function sendWhatsApp() {
+    const text = encodeURIComponent(formatAnswers());
+    window.open(`https://wa.me/?text=${text}`, '_blank');
+  }
+
+  function sendEmail() {
+    const subject = encodeURIComponent('Che Orika - 90-Day Self Assessment');
+    const body = encodeURIComponent(formatAnswers());
+    window.open(`mailto:?subject=${subject}&body=${body}`, '_blank');
+  }
+
+  function copyAll() {
+    navigator.clipboard.writeText(formatAnswers()).then(() => {
+      const notice = document.getElementById('savedNotice');
+      notice.classList.add('visible');
+      setTimeout(() => notice.classList.remove('visible'), 2000);
+    });
+  }
+
+  function updateProgress() {
+    const d = getAllAnswers();
+    let filled = 0;
+    let total = 13;
+    ['q1','q2','q3','q4','q5','q6','q7','q8'].forEach(id => { if (d[id] && d[id].trim()) filled++; });
+    ratingIds.forEach(id => { if (d[id] > 0) filled++; });
+    document.getElementById('progress').style.width = (filled / total * 100) + '%';
+  }
+
+  loadSaved();
+</script>
+
 </body>
 </html>
