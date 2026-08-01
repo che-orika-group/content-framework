@@ -16,32 +16,33 @@
 
   .header { background: var(--warm); color: var(--cream); padding: 48px 24px 40px; text-align: center; }
   .header-brand { font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
-  .header h1 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 400; margin-bottom: 8px; }
+  .header h1 { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 400; margin-bottom: 8px; }
   .header p { font-size: 14px; color: rgba(250,247,242,0.6); max-width: 480px; margin: 0 auto; }
   .header .deadline { display: inline-block; margin-top: 14px; background: rgba(196,112,75,0.3); padding: 6px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--terracotta); }
 
   .container { max-width: 640px; margin: 0 auto; padding: 32px 20px 80px; }
 
   .intro { background: white; border-radius: 14px; padding: 24px; margin-bottom: 28px; border: 1px solid rgba(0,0,0,0.06); font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .intro strong { color: var(--ink); }
 
-  .q-card { background: white; border-radius: 14px; padding: 24px; margin-bottom: 16px; border: 1px solid rgba(0,0,0,0.06); }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--terracotta); margin: 28px 0 12px; padding-left: 2px; }
+
+  .q-card { background: white; border-radius: 14px; padding: 24px; margin-bottom: 14px; border: 1px solid rgba(0,0,0,0.06); }
   .q-num { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--terracotta); font-weight: 600; margin-bottom: 6px; }
-  .q-text { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
-  .q-hint { font-size: 12.5px; color: var(--muted); margin-bottom: 12px; font-style: italic; }
+  .q-text { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 12px; line-height: 1.5; }
 
-  textarea { width: 100%; min-height: 100px; border: 1.5px solid var(--sand); border-radius: 10px; padding: 14px; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--ink); background: var(--cream); resize: vertical; line-height: 1.6; transition: border-color 0.2s; }
+  textarea { width: 100%; min-height: 90px; border: 1.5px solid var(--sand); border-radius: 10px; padding: 14px; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--ink); background: var(--cream); resize: vertical; line-height: 1.6; transition: border-color 0.2s; }
   textarea:focus { outline: none; border-color: var(--terracotta); background: white; }
+  textarea.short { min-height: 50px; }
 
-  .rating-row { display: flex; gap: 6px; margin-top: 8px; }
-  .rating-btn { flex: 1; padding: 10px 0; border: 1.5px solid var(--sand); border-radius: 8px; background: white; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; text-align: center; transition: all 0.15s; }
+  .rating-row { display: flex; gap: 6px; }
+  .rating-btn { flex: 1; padding: 12px 0; border: 1.5px solid var(--sand); border-radius: 8px; background: white; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: var(--muted); cursor: pointer; text-align: center; transition: all 0.15s; -webkit-tap-highlight-color: transparent; }
   .rating-btn:hover { border-color: var(--terracotta); color: var(--terracotta); }
   .rating-btn.selected { background: var(--terracotta); color: white; border-color: var(--terracotta); }
-  .rating-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 4px; padding: 0 4px; }
+  .rating-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 6px; padding: 0 4px; }
+  .rating-explain { margin-top: 12px; }
 
-  .section-divider { text-align: center; padding: 20px 0; }
-  .section-divider span { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--muted); }
-
-  .submit-area { margin-top: 32px; }
+  .submit-area { margin-top: 36px; }
   .submit-btn { width: 100%; padding: 16px; border: none; border-radius: 12px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; }
   .btn-whatsapp { background: #25D366; color: white; }
   .btn-whatsapp:hover { background: #1da851; }
@@ -50,12 +51,16 @@
   .btn-copy { background: white; color: var(--ink); border: 1.5px solid var(--sand); }
   .btn-copy:hover { border-color: var(--terracotta); color: var(--terracotta); }
 
-  .or-divider { text-align: center; font-size: 12px; color: var(--muted); margin: 6px 0; }
+  .or-divider { text-align: center; font-size: 12px; color: var(--muted); margin: 4px 0; }
 
-  .saved-notice { display: none; background: #e8f5e9; border-radius: 10px; padding: 14px; text-align: center; font-size: 14px; color: var(--green); font-weight: 500; margin-top: 12px; }
-  .saved-notice.visible { display: block; }
+  .notice { display: none; border-radius: 10px; padding: 14px; text-align: center; font-size: 14px; font-weight: 500; margin-top: 12px; }
+  .notice.success { display: block; background: #e8f5e9; color: var(--green); }
+  .notice.warning { display: block; background: #fff3e0; color: #e65100; }
 
   .progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--terracotta); transition: width 0.3s; z-index: 100; }
+
+  .autosave-indicator { position: fixed; bottom: 20px; right: 20px; background: var(--warm); color: var(--cream); padding: 8px 14px; border-radius: 8px; font-size: 12px; opacity: 0; transition: opacity 0.3s; z-index: 50; }
+  .autosave-indicator.visible { opacity: 1; }
 
   .footer { text-align: center; padding: 32px 20px; font-size: 12px; color: var(--muted); }
 
@@ -68,156 +73,127 @@
 <body>
 
 <div class="progress" id="progress"></div>
+<div class="autosave-indicator" id="autosaveIndicator">Saved</div>
 
 <div class="header">
   <div class="header-brand">Che Orika</div>
   <h1>90-Day Self Assessment</h1>
-  <p>Reflect on your first 3 months. Be honest. This is for growth, not judgement.</p>
+  <p>Social Media Manager review. Be honest. This is about growth, not judgement.</p>
   <div class="deadline">Due: Monday, August 4th</div>
 </div>
 
 <div class="container">
 
   <div class="intro">
-    This is not a test. There are no right or wrong answers. Be honest about what went well and what didn't. Your answers are saved automatically as you type. When you're done, send them via WhatsApp or email at the bottom.
+    <strong>10 questions.</strong> Answer honestly. There are no right answers, but vague answers tell us nothing. Be specific. Your progress saves automatically. When you're done, send your answers via WhatsApp or email at the bottom.
   </div>
 
-  <!-- Q1 -->
+  <!-- SECTION: Results -->
+  <div class="section-title">Results & Accountability</div>
+
   <div class="q-card">
     <div class="q-num">Question 1</div>
-    <div class="q-text">How would you describe your first 3 months managing Che Orika's social media?</div>
-    <div class="q-hint">In your own words. What was it like?</div>
-    <textarea id="q1" placeholder="Type here..." oninput="autoSave()"></textarea>
+    <div class="q-text">What specific metric improved most under your watch in the last 3 months, and what did you do that caused it?</div>
+    <textarea id="q1" placeholder="Name the metric, the number, and what you did..." oninput="autoSave()"></textarea>
   </div>
 
-  <!-- Q2 -->
   <div class="q-card">
     <div class="q-num">Question 2</div>
-    <div class="q-text">What are you most proud of?</div>
-    <div class="q-hint">A specific post, campaign, moment, or skill you developed.</div>
-    <textarea id="q2" placeholder="Type here..." oninput="autoSave()"></textarea>
+    <div class="q-text">How many DM conversations turned into actual sales? What's your honest read on why that number is what it is?</div>
+    <textarea id="q2" placeholder="Be specific about the number and the reason..." oninput="autoSave()"></textarea>
   </div>
 
-  <!-- Q3 -->
   <div class="q-card">
     <div class="q-num">Question 3</div>
-    <div class="q-text">What would you do differently if you could start over?</div>
-    <textarea id="q3" placeholder="Type here..." oninput="autoSave()"></textarea>
+    <div class="q-text">Name one goal you missed or one thing that didn't work. What was the real reason: your execution, lack of resources, or wrong strategy?</div>
+    <textarea id="q3" placeholder="Be honest about what went wrong and why..." oninput="autoSave()"></textarea>
   </div>
 
-  <div class="section-divider"><span>Content & Strategy</span></div>
+  <!-- SECTION: Strategic Thinking -->
+  <div class="section-title">Strategic Thinking</div>
 
-  <!-- Q4 -->
   <div class="q-card">
     <div class="q-num">Question 4</div>
-    <div class="q-text">Do you feel like our content makes people want to BUY, or just watch?</div>
-    <div class="q-hint">Be honest. Are we a store people shop from or a page people scroll past?</div>
-    <textarea id="q4" placeholder="Type here..." oninput="autoSave()"></textarea>
+    <div class="q-text">What does our audience respond to that we're NOT doing enough of yet?</div>
+    <textarea id="q4" placeholder="What have you noticed that we should be doing more?" oninput="autoSave()"></textarea>
   </div>
 
-  <!-- Q5 -->
   <div class="q-card">
     <div class="q-num">Question 5</div>
-    <div class="q-text">How many posts per week should we be posting? Why?</div>
-    <textarea id="q5" placeholder="Type here..." oninput="autoSave()"></textarea>
+    <div class="q-text">If you had to cut our content output by 50%, what would you keep and what would you drop? Why?</div>
+    <textarea id="q5" placeholder="This shows what you think actually matters..." oninput="autoSave()"></textarea>
   </div>
 
-  <!-- Q6 -->
   <div class="q-card">
     <div class="q-num">Question 6</div>
-    <div class="q-text">How quickly do you respond to DMs and comments?</div>
-    <div class="q-hint">Be honest about your typical response time.</div>
-    <textarea id="q6" placeholder="Type here..." oninput="autoSave()"></textarea>
+    <div class="q-text">Name one brand or competitor doing something we should learn from. What are they doing and how would you adapt it for Che Orika?</div>
+    <textarea id="q6" placeholder="Be specific about the brand and what they do..." oninput="autoSave()"></textarea>
   </div>
 
-  <div class="section-divider"><span>Rate Yourself (1-5)</span></div>
+  <!-- SECTION: Ownership -->
+  <div class="section-title">Ownership & Role</div>
 
-  <!-- R1 -->
-  <div class="q-card">
-    <div class="q-num">Rating</div>
-    <div class="q-text">Content strategy (knowing what to post and why)</div>
-    <div class="rating-row" id="r1"></div>
-    <div class="rating-label"><span>Needs work</span><span>Strong</span></div>
-  </div>
-
-  <!-- R2 -->
-  <div class="q-card">
-    <div class="q-num">Rating</div>
-    <div class="q-text">Understanding what drives sales (not just views)</div>
-    <div class="rating-row" id="r2"></div>
-    <div class="rating-label"><span>Needs work</span><span>Strong</span></div>
-  </div>
-
-  <!-- R3 -->
-  <div class="q-card">
-    <div class="q-num">Rating</div>
-    <div class="q-text">Tracking and reporting (logging data, analyzing performance)</div>
-    <div class="rating-row" id="r3"></div>
-    <div class="rating-label"><span>Needs work</span><span>Strong</span></div>
-  </div>
-
-  <!-- R4 -->
-  <div class="q-card">
-    <div class="q-num">Rating</div>
-    <div class="q-text">Proactiveness (bringing ideas without being asked)</div>
-    <div class="rating-row" id="r4"></div>
-    <div class="rating-label"><span>Needs work</span><span>Strong</span></div>
-  </div>
-
-  <!-- R5 -->
-  <div class="q-card">
-    <div class="q-num">Rating</div>
-    <div class="q-text">TikTok (creating content that works on TikTok specifically)</div>
-    <div class="rating-row" id="r5"></div>
-    <div class="rating-label"><span>Needs work</span><span>Strong</span></div>
-  </div>
-
-  <div class="section-divider"><span>Going Forward</span></div>
-
-  <!-- Q7 -->
   <div class="q-card">
     <div class="q-num">Question 7</div>
-    <div class="q-text">What do YOU need to do your job better?</div>
-    <div class="q-hint">Tools, training, clearer direction, more support, anything.</div>
-    <textarea id="q7" placeholder="Type here..." oninput="autoSave()"></textarea>
+    <div class="q-text">What part of this role do you do on your own without being asked, and what do you wait to be directed on?</div>
+    <textarea id="q7" placeholder="Be honest about where you lead and where you wait..." oninput="autoSave()"></textarea>
   </div>
 
-  <!-- Q8 -->
   <div class="q-card">
     <div class="q-num">Question 8</div>
-    <div class="q-text">Name 3 things you want to improve about yourself in the next 3 months.</div>
-    <textarea id="q8" placeholder="1.
-2.
-3." oninput="autoSave()"></textarea>
+    <div class="q-text">Rate yourself 1-5: How well do you know our customer? Could you write a caption right now that she'd screenshot and send to her friend?</div>
+    <div class="rating-row" id="r1"></div>
+    <div class="rating-label"><span>I don't know her well enough</span><span>I know exactly who she is</span></div>
+    <div class="rating-explain">
+      <textarea id="q8" class="short" placeholder="Why did you give yourself this rating?" oninput="autoSave()"></textarea>
+    </div>
+  </div>
+
+  <!-- SECTION: Growth -->
+  <div class="section-title">Growth & Next 3 Months</div>
+
+  <div class="q-card">
+    <div class="q-num">Question 9</div>
+    <div class="q-text">What skill or knowledge gap is limiting your work right now? What do you need to get better at?</div>
+    <textarea id="q9" placeholder="Be specific about the gap..." oninput="autoSave()"></textarea>
+  </div>
+
+  <div class="q-card">
+    <div class="q-num">Question 10</div>
+    <div class="q-text">What does success in this role look like at 6 months? Are you on track to get there?</div>
+    <textarea id="q10" placeholder="Paint the picture of what 'good' looks like..." oninput="autoSave()"></textarea>
   </div>
 
   <!-- Submit -->
   <div class="submit-area">
     <button class="submit-btn btn-whatsapp" onclick="sendWhatsApp()">
-      Send via WhatsApp
+      Send Answers via WhatsApp
     </button>
     <div class="or-divider">or</div>
     <button class="submit-btn btn-email" onclick="sendEmail()">
-      Send via Email
+      Send Answers via Email
     </button>
     <div class="or-divider">or</div>
     <button class="submit-btn btn-copy" onclick="copyAll()">
       Copy All Answers
     </button>
-    <div class="saved-notice" id="savedNotice">Copied to clipboard!</div>
+    <div class="notice" id="notice"></div>
   </div>
 
 </div>
 
 <div class="footer">
-  Che Orika | 90-Day Self Assessment | August 2026
+  Che Orika | 90-Day Self Assessment | August 2026<br>
+  Prepared by Marketing Team Lead
 </div>
 
 <script>
-  // Rating buttons
-  const ratingIds = ['r1','r2','r3','r4','r5'];
+  const RECIPIENT_EMAIL = 'chisomorike@gmail.com';
+  const textQs = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10'];
+  const ratingIds = ['r1'];
   const ratingValues = {};
 
+  // Build rating buttons
   ratingIds.forEach(id => {
     const container = document.getElementById(id);
     ratingValues[id] = 0;
@@ -225,103 +201,113 @@
       const btn = document.createElement('button');
       btn.className = 'rating-btn';
       btn.textContent = i;
+      btn.type = 'button';
       btn.onclick = () => {
         container.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
         btn.classList.add('selected');
         ratingValues[id] = i;
         autoSave();
-        updateProgress();
       };
       container.appendChild(btn);
     }
   });
 
-  // Auto-save to localStorage
   function autoSave() {
-    const data = getAllAnswers();
-    localStorage.setItem('co-self-assessment', JSON.stringify(data));
+    const data = {};
+    textQs.forEach(id => { data[id] = document.getElementById(id).value; });
+    ratingIds.forEach(id => { data[id] = ratingValues[id]; });
+    localStorage.setItem('co-self-assessment-v2', JSON.stringify(data));
     updateProgress();
+    // Show save indicator
+    const ind = document.getElementById('autosaveIndicator');
+    ind.classList.add('visible');
+    setTimeout(() => ind.classList.remove('visible'), 1200);
   }
 
-  // Load saved answers
   function loadSaved() {
-    const saved = localStorage.getItem('co-self-assessment');
+    const saved = localStorage.getItem('co-self-assessment-v2');
     if (!saved) return;
     const data = JSON.parse(saved);
-    ['q1','q2','q3','q4','q5','q6','q7','q8'].forEach(id => {
-      if (data[id]) document.getElementById(id).value = data[id];
-    });
+    textQs.forEach(id => { if (data[id]) document.getElementById(id).value = data[id]; });
     ratingIds.forEach(id => {
       if (data[id]) {
         ratingValues[id] = data[id];
         const btns = document.getElementById(id).querySelectorAll('.rating-btn');
-        btns[data[id] - 1].classList.add('selected');
+        if (btns[data[id] - 1]) btns[data[id] - 1].classList.add('selected');
       }
     });
     updateProgress();
   }
 
-  function getAllAnswers() {
-    return {
-      q1: document.getElementById('q1').value,
-      q2: document.getElementById('q2').value,
-      q3: document.getElementById('q3').value,
-      q4: document.getElementById('q4').value,
-      q5: document.getElementById('q5').value,
-      q6: document.getElementById('q6').value,
-      q7: document.getElementById('q7').value,
-      q8: document.getElementById('q8').value,
-      r1: ratingValues.r1,
-      r2: ratingValues.r2,
-      r3: ratingValues.r3,
-      r4: ratingValues.r4,
-      r5: ratingValues.r5
-    };
+  function updateProgress() {
+    let filled = 0;
+    const total = textQs.length + ratingIds.length;
+    textQs.forEach(id => { if (document.getElementById(id).value.trim()) filled++; });
+    ratingIds.forEach(id => { if (ratingValues[id] > 0) filled++; });
+    document.getElementById('progress').style.width = (filled / total * 100) + '%';
   }
 
   function formatAnswers() {
-    const d = getAllAnswers();
-    const rLabels = {r1:'Content Strategy', r2:'Sales Understanding', r3:'Tracking & Reporting', r4:'Proactiveness', r5:'TikTok'};
-    let text = `CHE ORIKA - 90-DAY SELF ASSESSMENT\n\n`;
-    text += `1. First 3 months:\n${d.q1 || '(not answered)'}\n\n`;
-    text += `2. Most proud of:\n${d.q2 || '(not answered)'}\n\n`;
-    text += `3. Would do differently:\n${d.q3 || '(not answered)'}\n\n`;
-    text += `4. Content = buying or watching?:\n${d.q4 || '(not answered)'}\n\n`;
-    text += `5. Posts per week:\n${d.q5 || '(not answered)'}\n\n`;
-    text += `6. DM response time:\n${d.q6 || '(not answered)'}\n\n`;
-    text += `RATINGS (1-5):\n`;
-    ratingIds.forEach(id => { text += `${rLabels[id]}: ${d[id] || '-'}/5\n`; });
-    text += `\n7. What I need:\n${d.q7 || '(not answered)'}\n\n`;
-    text += `8. 3 things to improve:\n${d.q8 || '(not answered)'}`;
+    const labels = {
+      q1: '1. Metric that improved most & what I did',
+      q2: '2. DM conversations to sales & why',
+      q3: '3. Goal I missed & real reason',
+      q4: '4. What audience responds to that we need more of',
+      q5: '5. If I cut 50% of content, I would keep/drop',
+      q6: '6. Brand to learn from & how to adapt',
+      q7: '7. What I do on my own vs wait to be told',
+      q8: '8. How well I know our customer (rating: ' + (ratingValues.r1 || '-') + '/5)',
+      q9: '9. Skill gap limiting my work',
+      q10: '10. What success looks like at 6 months'
+    };
+
+    let text = 'CHE ORIKA - 90-DAY SELF ASSESSMENT\nSocial Media Manager | May - July 2026\n\n';
+    textQs.forEach(id => {
+      const val = document.getElementById(id).value.trim() || '(not answered)';
+      text += labels[id] + ':\n' + val + '\n\n';
+    });
     return text;
   }
 
+  function validateForm() {
+    let unanswered = 0;
+    textQs.forEach(id => { if (!document.getElementById(id).value.trim()) unanswered++; });
+    if (ratingValues.r1 === 0) unanswered++;
+    return unanswered;
+  }
+
   function sendWhatsApp() {
+    const unanswered = validateForm();
+    if (unanswered > 3) {
+      showNotice('warning', `You have ${unanswered} unanswered questions. Please complete them first.`);
+      return;
+    }
     const text = encodeURIComponent(formatAnswers());
-    window.open(`https://wa.me/?text=${text}`, '_blank');
+    window.open('https://wa.me/?text=' + text, '_blank');
   }
 
   function sendEmail() {
+    const unanswered = validateForm();
+    if (unanswered > 3) {
+      showNotice('warning', `You have ${unanswered} unanswered questions. Please complete them first.`);
+      return;
+    }
     const subject = encodeURIComponent('Che Orika - 90-Day Self Assessment');
     const body = encodeURIComponent(formatAnswers());
-    window.open(`mailto:?subject=${subject}&body=${body}`, '_blank');
+    window.open('mailto:' + RECIPIENT_EMAIL + '?subject=' + subject + '&body=' + body, '_blank');
   }
 
   function copyAll() {
     navigator.clipboard.writeText(formatAnswers()).then(() => {
-      const notice = document.getElementById('savedNotice');
-      notice.classList.add('visible');
-      setTimeout(() => notice.classList.remove('visible'), 2000);
+      showNotice('success', 'Copied to clipboard! Paste it in WhatsApp or email.');
     });
   }
 
-  function updateProgress() {
-    const d = getAllAnswers();
-    let filled = 0;
-    let total = 13;
-    ['q1','q2','q3','q4','q5','q6','q7','q8'].forEach(id => { if (d[id] && d[id].trim()) filled++; });
-    ratingIds.forEach(id => { if (d[id] > 0) filled++; });
-    document.getElementById('progress').style.width = (filled / total * 100) + '%';
+  function showNotice(type, msg) {
+    const el = document.getElementById('notice');
+    el.className = 'notice ' + type;
+    el.textContent = msg;
+    if (type === 'success') setTimeout(() => { el.className = 'notice'; }, 3000);
   }
 
   loadSaved();
